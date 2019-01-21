@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = BaseSlidingController()
 //        window?.rootViewController = UINavigationController(rootViewController: HomeController())
+        
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().shadowImage = UIImage()
 
         return true
     }
