@@ -11,7 +11,7 @@ import UIKit
 class ProfileImageView: UIImageView {
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: 80, height: 80)
     }
 
 }
