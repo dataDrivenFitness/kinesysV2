@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DummyController.swift
 //  kinesysV2
 //
 //  Created by Chris Davis on 1/19/19.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WorkoutController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        view.backgroundColor = .purple
     }
 
-
 }
-

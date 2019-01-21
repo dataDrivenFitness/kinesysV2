@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
-		67F96AF321F3BA50000E48ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* ViewController.swift */; };
+		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
 		67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF421F3BA50000E48ED /* Main.storyboard */; };
 		67F96AF821F3BA52000E48ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF721F3BA52000E48ED /* Assets.xcassets */; };
 		67F96AFB21F3BA52000E48ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF921F3BA52000E48ED /* LaunchScreen.storyboard */; };
+		67F96B0421F3D5A0000E48ED /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0321F3D5A0000E48ED /* MenuController.swift */; };
+		67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */; };
+		67F96B0A21F40717000E48ED /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0921F40717000E48ED /* CustomMenuHeaderView.swift */; };
+		67F96B0C21F410F1000E48ED /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0B21F410F1000E48ED /* SpacerView.swift */; };
+		67F96B0E21F41549000E48ED /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0D21F41549000E48ED /* ProfileImageView.swift */; };
+		67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0F21F4273C000E48ED /* MenuItemCell.swift */; };
+		67F96B1621F4BE30000E48ED /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1521F4BE30000E48ED /* WorkoutController.swift */; };
+		67F96B1821F4BE53000E48ED /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1721F4BE53000E48ED /* CalendarController.swift */; };
+		67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1921F4BE6F000E48ED /* SettingController.swift */; };
+		67F96B1C21F4BE82000E48ED /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1B21F4BE81000E48ED /* HelpController.swift */; };
+		67F96B1E21F54252000E48ED /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1D21F54252000E48ED /* Extensions+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67F96AF221F3BA50000E48ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67F96AF221F3BA50000E48ED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		67F96AF521F3BA50000E48ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67F96AF721F3BA52000E48ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67F96AFA21F3BA52000E48ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67F96AFC21F3BA52000E48ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67F96B0321F3D5A0000E48ED /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
+		67F96B0921F40717000E48ED /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
+		67F96B0B21F410F1000E48ED /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
+		67F96B0D21F41549000E48ED /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		67F96B0F21F4273C000E48ED /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		67F96B1521F4BE30000E48ED /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
+		67F96B1721F4BE53000E48ED /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		67F96B1921F4BE6F000E48ED /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		67F96B1B21F4BE81000E48ED /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
+		67F96B1D21F54252000E48ED /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +76,57 @@
 		67F96AEF21F3BA50000E48ED /* kinesysV2 */ = {
 			isa = PBXGroup;
 			children = (
-				67F96AF021F3BA50000E48ED /* AppDelegate.swift */,
-				67F96AF221F3BA50000E48ED /* ViewController.swift */,
-				67F96AF421F3BA50000E48ED /* Main.storyboard */,
+				67F96B0821F406EF000E48ED /* Views */,
+				67F96B0221F3D578000E48ED /* Controllers */,
+				67F96B0521F3EFB9000E48ED /* BaseGroup */,
+				67F96B1F21F54274000E48ED /* Helpers */,
 				67F96AF721F3BA52000E48ED /* Assets.xcassets */,
+				67F96AF021F3BA50000E48ED /* AppDelegate.swift */,
+				67F96AF421F3BA50000E48ED /* Main.storyboard */,
 				67F96AF921F3BA52000E48ED /* LaunchScreen.storyboard */,
 				67F96AFC21F3BA52000E48ED /* Info.plist */,
 			);
 			path = kinesysV2;
+			sourceTree = "<group>";
+		};
+		67F96B0221F3D578000E48ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67F96B0321F3D5A0000E48ED /* MenuController.swift */,
+				67F96AF221F3BA50000E48ED /* HomeController.swift */,
+				67F96B1521F4BE30000E48ED /* WorkoutController.swift */,
+				67F96B1721F4BE53000E48ED /* CalendarController.swift */,
+				67F96B1921F4BE6F000E48ED /* SettingController.swift */,
+				67F96B1B21F4BE81000E48ED /* HelpController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		67F96B0521F3EFB9000E48ED /* BaseGroup */ = {
+			isa = PBXGroup;
+			children = (
+				67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */,
+			);
+			path = BaseGroup;
+			sourceTree = "<group>";
+		};
+		67F96B0821F406EF000E48ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67F96B0921F40717000E48ED /* CustomMenuHeaderView.swift */,
+				67F96B0B21F410F1000E48ED /* SpacerView.swift */,
+				67F96B0D21F41549000E48ED /* ProfileImageView.swift */,
+				67F96B0F21F4273C000E48ED /* MenuItemCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		67F96B1F21F54274000E48ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				67F96B1D21F54252000E48ED /* Extensions+UIView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +200,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67F96AF321F3BA50000E48ED /* ViewController.swift in Sources */,
+				67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */,
+				67F96B1621F4BE30000E48ED /* WorkoutController.swift in Sources */,
+				67F96B0E21F41549000E48ED /* ProfileImageView.swift in Sources */,
+				67F96B0421F3D5A0000E48ED /* MenuController.swift in Sources */,
+				67F96B1C21F4BE82000E48ED /* HelpController.swift in Sources */,
+				67F96B1E21F54252000E48ED /* Extensions+UIView.swift in Sources */,
+				67F96B0C21F410F1000E48ED /* SpacerView.swift in Sources */,
 				67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */,
+				67F96B0A21F40717000E48ED /* CustomMenuHeaderView.swift in Sources */,
+				67F96B1821F4BE53000E48ED /* CalendarController.swift in Sources */,
+				67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */,
+				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
+				67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
