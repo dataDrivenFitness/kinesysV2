@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
 		67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */; };
+		67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4C021F7A7AA004D1528 /* SignupController.swift */; };
 		67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D621F551C200D61DA6 /* SpacerView.swift */; };
 		67D2D9D921F551C200D61DA6 /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */; };
 		67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */; };
@@ -45,6 +46,7 @@
 		2C3CF422337CAD6FD61697D6 /* Pods-kinesysV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kinesysV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2.debug.xcconfig"; sourceTree = "<group>"; };
 		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67C5B4C021F7A7AA004D1528 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		67D2D9D621F551C200D61DA6 /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
 		67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				67F96B1921F4BE6F000E48ED /* SettingController.swift */,
 				67F96B1B21F4BE81000E48ED /* HelpController.swift */,
 				67D2DA1F21F6B20900D61DA6 /* LoginController.swift */,
+				67C5B4C021F7A7AA004D1528 /* SignupController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */,
 				67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */,
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
+				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
 				67D2D9F221F557C000D61DA6 /* PostCell.swift in Sources */,
 				67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */,

@@ -34,7 +34,7 @@ class MenuItemCell: UITableViewCell {
     let bgView: UIView = {
         let v = UIView()
         v.backgroundColor = .orange
-        v.layer.cornerRadius = 8
+        v.layer.cornerRadius = 25
         return v
     }()
     
@@ -43,7 +43,7 @@ class MenuItemCell: UITableViewCell {
         
         selectionStyle = .default
         
-        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleLabel, UIView()])
+        let stackView = UIStackView(arrangedSubviews: [SpacerView(space: 4), iconImageView, titleLabel, UIView()])
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 12
@@ -58,7 +58,7 @@ class MenuItemCell: UITableViewCell {
         stackView.layoutMargins = .init(top: 4, left: 12, bottom: 4, right: 12)
         
         addSubview(bgView)
-        bgView.fillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 8))
+        bgView.fillSuperview(padding: .init(top: 0, left: 12, bottom: 0, right: 12))
         sendSubviewToBack(bgView)
         
     }

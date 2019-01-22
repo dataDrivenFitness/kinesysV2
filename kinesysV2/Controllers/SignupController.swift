@@ -10,13 +10,13 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-protocol LoginControllerDelegate {
+protocol SignupControllerDelegate {
     func didFinishLoggingIn()
 }
 
-class LoginController: UIViewController, LoginControllerDelegate {
+class SignupController: UIViewController, SignupControllerDelegate {
     
-    var delegate: LoginControllerDelegate?
+    var delegate: SignupControllerDelegate?
     
     let logoText: UILabel = {
         let text = UILabel()
@@ -33,7 +33,7 @@ class LoginController: UIViewController, LoginControllerDelegate {
         tf.placeholder = "enter email"
         tf.keyboardType = .emailAddress
         tf.backgroundColor = .white
-//        tf.textColor = UIColor.orange
+        //        tf.textColor = UIColor.orange
         tf.layer.borderColor = UIColor.orange.cgColor
         tf.layer.borderWidth = 1
         tf.font = UIFont(name: "Avenir-Light", size: 20)
@@ -45,7 +45,19 @@ class LoginController: UIViewController, LoginControllerDelegate {
         tf.placeholder = "enter password"
         tf.isSecureTextEntry = true
         tf.backgroundColor = .white
-//        tf.textColor = UIColor.orange
+        //        tf.textColor = UIColor.orange
+        tf.layer.borderColor = UIColor.orange.cgColor
+        tf.layer.borderWidth = 1
+        tf.font = UIFont(name: "Avenir-Light", size: 20)
+        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        return tf
+    }()
+    let confirmPasswordTextField: CustomTextField = {
+        let tf = CustomTextField(padding: 24, height: 44)
+        tf.placeholder = "re-enter password"
+        tf.isSecureTextEntry = true
+        tf.backgroundColor = .white
+        //        tf.textColor = UIColor.orange
         tf.layer.borderColor = UIColor.orange.cgColor
         tf.layer.borderWidth = 1
         tf.font = UIFont(name: "Avenir-Light", size: 20)
@@ -53,26 +65,26 @@ class LoginController: UIViewController, LoginControllerDelegate {
         return tf
     }()
     
-    let loginButton: UIButton = {
+    let signupButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
-//        button.backgroundColor = .orange
+        //        button.backgroundColor = .orange
         button.backgroundColor = UIColor.lightGray
         button.setTitleColor(UIColor.darkGray, for: .disabled)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.layer.cornerRadius = 22
-        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
         return button
     }()
     
     let gotoSignupButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign up", for: .normal)
+        button.setTitle("log in", for: .normal)
         button.setTitleColor(.orange, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
-        button.addTarget(self, action: #selector(handleGotoSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         return button
     }()
     
@@ -100,13 +112,13 @@ class LoginController: UIViewController, LoginControllerDelegate {
         loginViewModel.isFormValidObserver = { [unowned self] (isFormValid) in
             print("Form is changing, is it valid?", isFormValid)
             
-            self.loginButton.isEnabled = isFormValid
+            self.signupButton.isEnabled = isFormValid
             if isFormValid {
-                self.loginButton.backgroundColor = .orange
-                self.loginButton.setTitleColor(.white, for: .normal)
+                self.signupButton.backgroundColor = .orange
+                self.signupButton.setTitleColor(.white, for: .normal)
             } else {
-                self.loginButton.backgroundColor = .lightGray
-                self.loginButton.setTitleColor(.gray, for: .normal)
+                self.signupButton.backgroundColor = .lightGray
+                self.signupButton.setTitleColor(.gray, for: .normal)
             }
         }
     }
@@ -114,6 +126,10 @@ class LoginController: UIViewController, LoginControllerDelegate {
     @objc fileprivate func handleGotoSignUp() {
         let signupController = SignupController()
         navigationController?.pushViewController(signupController, animated: true)
+    }
+    
+    @objc fileprivate func handleBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     @objc fileprivate func handleTextChange(textField: UITextField) {
@@ -124,31 +140,37 @@ class LoginController: UIViewController, LoginControllerDelegate {
         }
     }
     
-    @objc fileprivate func handleLogin() {
+    @objc fileprivate func handleSignup() {
         self.handleTapDismiss()
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard let confirmPassword = confirmPasswordTextField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                SVProgressHUD.setDefaultMaskType(.gradient)
-                SVProgressHUD.setHapticsEnabled(true)
-                SVProgressHUD.showError(withStatus: "email or password incorrect")
-                SVProgressHUD.dismiss(withDelay: 1.5)
-                print(error!)
-            } else {
-                self.didFinishLoggingIn()
-                SVProgressHUD.setDefaultMaskType(.gradient)
-                SVProgressHUD.setHapticsEnabled(true)
-                SVProgressHUD.show(withStatus: "let's do this!")
-                SVProgressHUD.dismiss(withDelay: 2)
-                
-                self.dismiss(animated: true, completion: nil)
-
-                
-//                UserDefaults.standard.setIsLoggedIn(value: true)
-//                self.loginDelegate?.finishedLoggingIn()
+        if password != confirmPassword {
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.setHapticsEnabled(true)
+            SVProgressHUD.showError(withStatus: "password does not match")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+            
+        } else {
+            
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    SVProgressHUD.setDefaultMaskType(.gradient)
+                    SVProgressHUD.setHapticsEnabled(true)
+                    SVProgressHUD.showError(withStatus: "not a valid email")
+                    SVProgressHUD.dismiss(withDelay: 1.5)
+                    print(error!)
+                } else {
+                    SVProgressHUD.setDefaultMaskType(.gradient)
+                    SVProgressHUD.setHapticsEnabled(true)
+                    SVProgressHUD.show(withStatus: "let's do this!")
+                    SVProgressHUD.dismiss(withDelay: 2)
+                    
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
+            
         }
     }
     
@@ -194,7 +216,8 @@ class LoginController: UIViewController, LoginControllerDelegate {
         logoText,
         emailTextField,
         passwordTextField,
-        loginButton
+        confirmPasswordTextField,
+        signupButton
         ])
     
     fileprivate func setupLayout() {
