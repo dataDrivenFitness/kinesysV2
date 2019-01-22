@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class LoginController: UIViewController {
     
@@ -55,6 +57,7 @@ class LoginController: UIViewController {
         button.setTitleColor(UIColor.darkGray, for: .disabled)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.layer.cornerRadius = 22
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -62,8 +65,6 @@ class LoginController: UIViewController {
         super.viewDidLoad()
 //        navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "log in", style: .plain, target: self, action: #selector(handleLogin))
         
         setupLayout()
         setupNotificationObservers()
@@ -97,7 +98,31 @@ class LoginController: UIViewController {
     }
     
     @objc fileprivate func handleLogin() {
-        dismiss(animated: true, completion: nil)
+        self.handleTapDismiss()
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                SVProgressHUD.setDefaultMaskType(.gradient)
+                SVProgressHUD.setHapticsEnabled(true)
+                SVProgressHUD.showError(withStatus: "email or password incorrect")
+                SVProgressHUD.dismiss(withDelay: 1.5)
+                print(error!)
+            } else {
+                SVProgressHUD.setDefaultMaskType(.gradient)
+                SVProgressHUD.setHapticsEnabled(true)
+                SVProgressHUD.show(withStatus: "let's do this!")
+                SVProgressHUD.dismiss(withDelay: 2)
+                
+                self.dismiss(animated: true, completion: nil)
+
+                
+//                UserDefaults.standard.setIsLoggedIn(value: true)
+//                self.loginDelegate?.finishedLoggingIn()
+            }
+        }
+        
     }
     
     @objc func handleTapDismiss() {

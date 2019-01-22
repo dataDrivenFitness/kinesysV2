@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
+		67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */; };
 		67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D621F551C200D61DA6 /* SpacerView.swift */; };
 		67D2D9D921F551C200D61DA6 /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */; };
 		67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */; };
@@ -37,10 +38,13 @@
 		67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1921F4BE6F000E48ED /* SettingController.swift */; };
 		67F96B1C21F4BE82000E48ED /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1B21F4BE81000E48ED /* HelpController.swift */; };
 		67F96B1E21F54252000E48ED /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1D21F54252000E48ED /* Extensions+UIView.swift */; };
+		C1B8337683770814239128E0 /* Pods_kinesysV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE82791A255CCAEB7E5DF48 /* Pods_kinesysV2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C3CF422337CAD6FD61697D6 /* Pods-kinesysV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kinesysV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2.debug.xcconfig"; sourceTree = "<group>"; };
 		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67D2D9D621F551C200D61DA6 /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
 		67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		67F96B1921F4BE6F000E48ED /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		67F96B1B21F4BE81000E48ED /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
 		67F96B1D21F54252000E48ED /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		D1D2EFF4FE32C7494BD415DF /* Pods-kinesysV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kinesysV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2.release.xcconfig"; sourceTree = "<group>"; };
+		EDE82791A255CCAEB7E5DF48 /* Pods_kinesysV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kinesysV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +85,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B8337683770814239128E0 /* Pods_kinesysV2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2333B0F28F680B0AAC340165 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDE82791A255CCAEB7E5DF48 /* Pods_kinesysV2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32AD26877B2F3E1F42DBDF67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C3CF422337CAD6FD61697D6 /* Pods-kinesysV2.debug.xcconfig */,
+				D1D2EFF4FE32C7494BD415DF /* Pods-kinesysV2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		67D2D9DA21F5574200D61DA6 /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +172,8 @@
 			children = (
 				67F96AEF21F3BA50000E48ED /* kinesysV2 */,
 				67F96AEE21F3BA50000E48ED /* Products */,
+				32AD26877B2F3E1F42DBDF67 /* Pods */,
+				2333B0F28F680B0AAC340165 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +197,7 @@
 				67F96AF021F3BA50000E48ED /* AppDelegate.swift */,
 				67F96AF421F3BA50000E48ED /* Main.storyboard */,
 				67F96AF921F3BA52000E48ED /* LaunchScreen.storyboard */,
+				67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */,
 				67F96AFC21F3BA52000E48ED /* Info.plist */,
 			);
 			path = kinesysV2;
@@ -226,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67F96AFF21F3BA52000E48ED /* Build configuration list for PBXNativeTarget "kinesysV2" */;
 			buildPhases = (
+				418EF6219C7966CF126FBA81 /* [CP] Check Pods Manifest.lock */,
 				67F96AE921F3BA50000E48ED /* Sources */,
 				67F96AEA21F3BA50000E48ED /* Frameworks */,
 				67F96AEB21F3BA50000E48ED /* Resources */,
+				D8780E14B60651480EF07AFB /* [CP] Embed Pods Frameworks */,
+				206ACA2B705B038E930AE2C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,12 +308,100 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F96AFB21F3BA52000E48ED /* LaunchScreen.storyboard in Resources */,
+				67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */,
 				67F96AF821F3BA52000E48ED /* Assets.xcassets in Resources */,
 				67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		206ACA2B705B038E930AE2C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		418EF6219C7966CF126FBA81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kinesysV2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8780E14B60651480EF07AFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67F96AE921F3BA50000E48ED /* Sources */ = {
@@ -460,6 +578,7 @@
 		};
 		67F96B0021F3BA52000E48ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C3CF422337CAD6FD61697D6 /* Pods-kinesysV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +597,7 @@
 		};
 		67F96B0121F3BA52000E48ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1D2EFF4FE32C7494BD415DF /* Pods-kinesysV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
