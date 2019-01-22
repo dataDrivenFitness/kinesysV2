@@ -14,49 +14,35 @@ class StrengthCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelega
     
     var videos: [Video] = {
         
-        var phase = Phase()
-        phase.text = "foundations"
-        phase.sets = "4"
-        phase.reps = "8-12"
-        phase.rest = "60 sec"
-        
-        var progression = Progression()
-        progression.text = "baseline"
-        
         var exercise1 = Video()
         exercise1.thumbnailImageName = "kbImage1"
         exercise1.exerciseIcon = "kbIcon"
         exercise1.title = "Kettlebell Front Swing"
-        exercise1.phase = phase
-        exercise1.progression = progression
+        exercise1.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise2 = Video()
         exercise2.thumbnailImageName = "kbImage2"
         exercise2.exerciseIcon = "kbIcon"
         exercise2.title = "Kettlebell Single Arm Clean"
-        exercise2.phase = phase
-        exercise2.progression = progression
+        exercise2.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise3 = Video()
         exercise3.thumbnailImageName = "kbImage3"
         exercise3.exerciseIcon = "kbIcon"
         exercise3.title = "Kettlebell Turkish Get Up"
-        exercise3.phase = phase
-        exercise3.progression = progression
+        exercise3.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise4 = Video()
         exercise4.thumbnailImageName = "kbImage4"
         exercise4.exerciseIcon = "kbIcon"
         exercise4.title = "Kettlebell Single Leg Deadlift"
-        exercise4.phase = phase
-        exercise4.progression = progression
+        exercise4.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise5 = Video()
         exercise5.thumbnailImageName = "kbImage5"
         exercise5.exerciseIcon = "kbIcon"
         exercise5.title = "Kettlebell Single Goblet Squat"
-        exercise5.phase = phase
-        exercise5.progression = progression
+        exercise5.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         return [exercise1, exercise2, exercise3, exercise4, exercise5]
         

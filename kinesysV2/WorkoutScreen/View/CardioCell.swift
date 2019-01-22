@@ -14,36 +14,18 @@ class CardioCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate
     
     var videos: [Video] = {
         
-        var phase = Phase()
-        phase.text = "cardio str @ 5-10% incline"
-        phase.sets = "6-8"
-        phase.reps = "mid:lo:hi - 2:1:1"
-        phase.rest = "60 sec"
-        
-        var phase2 = Phase()
-        phase2.text = "cardio power"
-        phase2.sets = "10"
-        phase2.reps = "hi:lo - 2:1"
-        phase2.rest = "0 sec"
-
-        var progression = Progression()
-        progression.text = "n/a"
-        
         var exercise1 = Video()
         exercise1.thumbnailImageName = "treadmill"
         exercise1.exerciseIcon = "treadmillIcon"
         exercise1.title = "Treadmill Strength Run"
-        exercise1.phase = phase
-        exercise1.progression = progression
+        exercise1.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise2 = Video()
         exercise2.thumbnailImageName = "rower"
         exercise2.exerciseIcon = "treadmillIcon"
         exercise2.title = "Rower Sprints"
-        exercise2.phase = phase2
-        exercise2.progression = progression
+        exercise2.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
 
-        
         return [exercise1, exercise2]
         
     }()

@@ -13,6 +13,7 @@ class ExerciseCell: BaseCell {
     var video: Video? {
         didSet {
             titleLabel.text = video?.title
+            subtitleTextView.text = video?.subtitle
             
             if let thumbnailImageName = video?.thumbnailImageName {
                 thumbnailImageView.image = UIImage(named: thumbnailImageName)
@@ -20,13 +21,6 @@ class ExerciseCell: BaseCell {
             
             if let exerciseIconName = video?.exerciseIcon {
                 exerciseIconImageView.image = UIImage(named: exerciseIconName)
-            }
-            
-            if let phaseName = video?.phase?.text, let progressionName = video?.progression?.text, let phaseSets = video?.phase?.sets, let phaseReps = video?.phase?.reps, let phaseRest = video?.phase?.rest {
-                
-                let subtitleText = "PHASE: \(phaseName)  •  PROGRESSION: \(progressionName)\nSETS: \(phaseSets)   •   REPS: \(phaseReps)   •   REST: \(phaseRest)"//add set, rep, rest
-                subtitleTextView.text = subtitleText
-                // add NSMutableAttributedString to make phase and progresion bold
             }
             
         }

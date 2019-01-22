@@ -61,42 +61,11 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         workoutCollectionView.register(PostCell.self, forCellWithReuseIdentifier: postWorkoutCellId)
 
         
-//        workoutCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        workoutCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
+        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         workoutCollectionView.isPagingEnabled = true
     }
-    
-//    @objc func handleOpen() {
-//        (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController)?.openMenu()
-//    }
-//    
-//    @objc func handleHide() {
-//        
-//    }
-    
-//    func setupNavBarButtons() {
-//        let chatButton = UIBarButtonItem(image: UIImage(named: "search_icon")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleChat))
-//
-//        let moreButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleMore))
-//
-//        chatButton.tintColor = .orange
-//        moreButton.tintColor = .orange
-//
-//        navigationItem.rightBarButtonItem = chatButton
-//        navigationItem.leftBarButtonItem = moreButton
-//    }
-//    
-//    @objc func handleMore() {
-//        
-//    }
-//    
-//    @objc func handleChat() { //*** log out button for now ***
-////        UserDefaults.standard.setIsLoggedIn(value: false)
-////        let loginController = LoginController()
-////        present(loginController, animated: true, completion: nil)
-//        
-//    }
     
     func scrollToMenuIndex (menuIndex: Int) {
         let indexPath = NSIndexPath(item: menuIndex, section: 0)
@@ -163,7 +132,7 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height - 20)
+        return CGSize(width: view.frame.width, height: view.frame.height - 40)
     }
     
 }

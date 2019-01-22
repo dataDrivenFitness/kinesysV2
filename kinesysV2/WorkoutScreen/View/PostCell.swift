@@ -14,35 +14,23 @@ class PostCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     
     var videos: [Video] = {
         
-        var phase = Phase()
-        phase.text = "corrective exercise"
-        phase.sets = "1"
-        phase.reps = "60 sec hold"
-        phase.rest = "n/a"
-
-        var progression = Progression()
-        progression.text = "n/a"
-        
         var exercise1 = Video()
         exercise1.thumbnailImageName = "post1"
         exercise1.exerciseIcon = "bodyweightIcon"
         exercise1.title = "Static Stretch Hip Flexor"
-        exercise1.phase = phase
-        exercise1.progression = progression
+        exercise1.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise2 = Video()
         exercise2.thumbnailImageName = "post2"
         exercise2.exerciseIcon = "bodyweightIcon"
         exercise2.title = "Static Stretch Glutes"
-        exercise2.phase = phase
-        exercise2.progression = progression
+        exercise2.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         var exercise3 = Video()
         exercise3.thumbnailImageName = "post3"
         exercise3.exerciseIcon = "bodyweightIcon"
         exercise3.title = "Static Stretch Hamstring"
-        exercise3.phase = phase
-        exercise3.progression = progression
+        exercise3.subtitle = "Get ready to swing your ass off in this amazing cardio burning strength/power exercise"
         
         return [exercise1, exercise2, exercise3]
         

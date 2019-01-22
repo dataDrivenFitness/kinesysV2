@@ -26,13 +26,14 @@ class NavButtonForViewController: UIViewController {
     func setupCircularNavButton() { // need to refactor this - duplication
         let image = #imageLiteral(resourceName: "alexOC_profile").withRenderingMode(.alwaysOriginal)
         let customView = UIButton(type: .system)
+        let iconSize: CGFloat = 30
         customView.addTarget(self, action: #selector(handleOpen), for: .touchUpInside)
         customView.setImage(image, for: .normal)
         customView.imageView?.contentMode = .scaleAspectFit
-        customView.layer.cornerRadius = 20
+        customView.layer.cornerRadius = iconSize / 2
         customView.clipsToBounds = true
-        customView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        customView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        customView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        customView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
         let barButtonItem = UIBarButtonItem(customView: customView)
         
         navigationItem.leftBarButtonItem = barButtonItem

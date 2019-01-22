@@ -92,18 +92,10 @@
 		67D2D9DB21F557C000D61DA6 /* WorkoutScreen */ = {
 			isa = PBXGroup;
 			children = (
-				67D2D9DC21F557C000D61DA6 /* Controller */,
 				67D2D9DE21F557C000D61DA6 /* Model */,
 				67D2D9E021F557C000D61DA6 /* View */,
 			);
 			path = WorkoutScreen;
-			sourceTree = "<group>";
-		};
-		67D2D9DC21F557C000D61DA6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		67D2D9DE21F557C000D61DA6 /* Model */ = {
