@@ -14,7 +14,7 @@ protocol LoginControllerDelegate {
     func didFinishLoggingIn()
 }
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, LoginControllerDelegate {
     
     var delegate: LoginControllerDelegate?
     
@@ -78,8 +78,15 @@ class LoginController: UIViewController {
         setupLoginViewModelObserver()
     }
     
-    let loginViewModel = LoginViewModel()
+    func didFinishLoggingIn() {
+        fetchCurrentUser()
+    }
     
+    fileprivate func fetchCurrentUser() {
+        print("fetching current user")
+    }
+    
+    let loginViewModel = LoginViewModel()
     fileprivate func setupLoginViewModelObserver() {
         loginViewModel.isFormValidObserver = { [unowned self] (isFormValid) in
             print("Form is changing, is it valid?", isFormValid)
@@ -116,6 +123,7 @@ class LoginController: UIViewController {
                 SVProgressHUD.dismiss(withDelay: 1.5)
                 print(error!)
             } else {
+                self.didFinishLoggingIn()
                 SVProgressHUD.setDefaultMaskType(.gradient)
                 SVProgressHUD.setHapticsEnabled(true)
                 SVProgressHUD.show(withStatus: "let's do this!")
@@ -128,7 +136,6 @@ class LoginController: UIViewController {
 //                self.loginDelegate?.finishedLoggingIn()
             }
         }
-        
     }
     
     @objc func handleTapDismiss() {

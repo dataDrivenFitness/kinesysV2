@@ -62,7 +62,7 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
         }
     }
     func didFinishLoggingIn() {
-        
+        fetchCurrentUser()
     }
     
     @objc func handleTapDismiss() {
@@ -84,6 +84,10 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
         if gesture.state == .ended {
             handleEnded(gesture: gesture)
         }
+    }
+    
+    fileprivate func fetchCurrentUser() {
+        print("fetching current user")
     }
     
     fileprivate func handleEnded(gesture: UIPanGestureRecognizer) {
