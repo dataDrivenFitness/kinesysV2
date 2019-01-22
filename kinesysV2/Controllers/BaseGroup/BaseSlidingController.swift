@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class MainContainerView: UIView {}
 class LeftContainerView: UIView {}
 class DarkCoverView: UIView {}
 
-class BaseSlidingController: UIViewController {
-    
+class BaseSlidingController: UIViewController, LoginControllerDelegate {
+        
     let mainView: MainContainerView = {
         let v = MainContainerView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +48,21 @@ class BaseSlidingController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss))
         darkCoverView.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("HomeController did appear")
+        // you want to kick the user out when they log out
+        if Auth.auth().currentUser == nil {
+            let loginController = LoginController()
+            loginController.delegate = self
+            let navController = UINavigationController(rootViewController: loginController)
+            present(navController, animated: true)
+        }
+    }
+    func didFinishLoggingIn() {
+        
     }
     
     @objc func handleTapDismiss() {
@@ -112,6 +128,15 @@ class BaseSlidingController: UIViewController {
         performAnimations()
     }
     
+    fileprivate func performLogout() {
+        
+        try? Auth.auth().signOut()
+        let loginController = LoginController()
+        let navController = UINavigationController(rootViewController: loginController)
+        present(navController, animated: true)
+        mainViewController = UINavigationController(rootViewController: HomeController())
+    }
+    
     func didSelectMenuItem(indexPath: IndexPath) {
         performMainViewCleanup()
         closeMenu()
@@ -128,10 +153,7 @@ class BaseSlidingController: UIViewController {
         case 4:
             mainViewController = UINavigationController(rootViewController: HelpController())
         default:
-            let loginController = LoginController()
-            let navController = UINavigationController(rootViewController: loginController)
-            present(navController, animated: true)
-            mainViewController = UINavigationController(rootViewController: HomeController())
+            performLogout()
         }
         
         mainView.addSubview(mainViewController.view)

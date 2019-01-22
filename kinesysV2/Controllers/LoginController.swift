@@ -10,7 +10,13 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
+protocol LoginControllerDelegate {
+    func didFinishLoggingIn()
+}
+
 class LoginController: UIViewController {
+    
+    var delegate: LoginControllerDelegate?
     
     let logoText: UILabel = {
         let text = UILabel()
