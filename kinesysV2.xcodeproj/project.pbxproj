@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
 		67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D621F551C200D61DA6 /* SpacerView.swift */; };
 		67D2D9D921F551C200D61DA6 /* CustomMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */; };
 		67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */; };
@@ -22,6 +23,7 @@
 		67D2D9F421F557C000D61DA6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9E921F557C000D61DA6 /* ExerciseCell.swift */; };
 		67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */; };
 		67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2DA1F21F6B20900D61DA6 /* LoginController.swift */; };
+		67D2DA2421F6D8F900D61DA6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */; };
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
 		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
 		67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF421F3BA50000E48ED /* Main.storyboard */; };
@@ -38,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67D2D9D621F551C200D61DA6 /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		67D2D9D721F551C200D61DA6 /* CustomMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuHeaderView.swift; sourceTree = "<group>"; };
 		67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		67D2D9E921F557C000D61DA6 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtonForViewController.swift; sourceTree = "<group>"; };
 		67D2DA1F21F6B20900D61DA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F96AF221F3BA50000E48ED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		67D2DA2121F6D8DB00D61DA6 /* LoginScreens */ = {
+			isa = PBXGroup;
+			children = (
+				67D2DA2221F6D8EB00D61DA6 /* Views */,
+			);
+			path = LoginScreens;
+			sourceTree = "<group>";
+		};
+		67D2DA2221F6D8EB00D61DA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */,
+				67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		67F96AE421F3BA50000E48ED = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,7 @@
 		67F96AEF21F3BA50000E48ED /* kinesysV2 */ = {
 			isa = PBXGroup;
 			children = (
+				67D2DA2121F6D8DB00D61DA6 /* LoginScreens */,
 				67D2D9DB21F557C000D61DA6 /* WorkoutScreen */,
 				67D2D9DA21F5574200D61DA6 /* SlideOutMenu */,
 				67F96B0221F3D578000E48ED /* Controllers */,
@@ -268,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D2DA2421F6D8F900D61DA6 /* CustomTextField.swift in Sources */,
 				67D2D9F321F557C000D61DA6 /* CardioCell.swift in Sources */,
 				67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */,
 				67D2D9EC21F557C000D61DA6 /* MenuBar.swift in Sources */,
@@ -275,6 +298,7 @@
 				67D2D9F421F557C000D61DA6 /* ExerciseCell.swift in Sources */,
 				67F96B0E21F41549000E48ED /* ProfileImageView.swift in Sources */,
 				67D2D9EB21F557C000D61DA6 /* Video.swift in Sources */,
+				67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */,
 				67D2D9EF21F557C000D61DA6 /* VideoLauncher.swift in Sources */,
 				67D2D9EE21F557C000D61DA6 /* StrengthCell.swift in Sources */,
 				67D2D9F021F557C000D61DA6 /* BaseCell.swift in Sources */,
