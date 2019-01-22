@@ -21,6 +21,7 @@
 		67D2D9F321F557C000D61DA6 /* CardioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9E821F557C000D61DA6 /* CardioCell.swift */; };
 		67D2D9F421F557C000D61DA6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9E921F557C000D61DA6 /* ExerciseCell.swift */; };
 		67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */; };
+		67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2DA1F21F6B20900D61DA6 /* LoginController.swift */; };
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
 		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
 		67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF421F3BA50000E48ED /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		67D2D9E821F557C000D61DA6 /* CardioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioCell.swift; sourceTree = "<group>"; };
 		67D2D9E921F557C000D61DA6 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtonForViewController.swift; sourceTree = "<group>"; };
+		67D2DA1F21F6B20900D61DA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F96AF221F3BA50000E48ED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		67D2D9DA21F5574200D61DA6 /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
-				67F96B0521F3EFB9000E48ED /* BaseGroup */,
 				67F96B0821F406EF000E48ED /* Views */,
 			);
 			path = SlideOutMenu;
@@ -164,12 +165,14 @@
 		67F96B0221F3D578000E48ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				67F96B0521F3EFB9000E48ED /* BaseGroup */,
 				67F96B0321F3D5A0000E48ED /* MenuController.swift */,
 				67F96AF221F3BA50000E48ED /* HomeController.swift */,
 				67D2D9DD21F557C000D61DA6 /* WorkoutController.swift */,
 				67F96B1721F4BE53000E48ED /* CalendarController.swift */,
 				67F96B1921F4BE6F000E48ED /* SettingController.swift */,
 				67F96B1B21F4BE81000E48ED /* HelpController.swift */,
+				67D2DA1F21F6B20900D61DA6 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 		67F96B0521F3EFB9000E48ED /* BaseGroup */ = {
 			isa = PBXGroup;
 			children = (
+				67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */,
 				67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */,
 			);
 			path = BaseGroup;
@@ -197,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				67F96B1D21F54252000E48ED /* Extensions+UIView.swift */,
-				67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */,
 				67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */,
 				67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */,
+				67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */,
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
 				67D2D9F221F557C000D61DA6 /* PostCell.swift in Sources */,

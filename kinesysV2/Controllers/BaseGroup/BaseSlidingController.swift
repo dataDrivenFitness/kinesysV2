@@ -128,18 +128,17 @@ class BaseSlidingController: UIViewController {
         case 4:
             mainViewController = UINavigationController(rootViewController: HelpController())
         default:
-            let logoutView = UINavigationController()
-            mainView.addSubview(logoutView.view)
-            logoutView.view.backgroundColor = .white
-            logoutView.navigationItem.title = "Log out here"
-            addChild(logoutView)
-            mainViewController = logoutView
+            let loginController = LoginController()
+            let navController = UINavigationController(rootViewController: loginController)
+            present(navController, animated: true)
+            mainViewController = UINavigationController(rootViewController: HomeController())
         }
         
         mainView.addSubview(mainViewController.view)
         addChild(mainViewController)
         mainView.bringSubviewToFront(darkCoverView)
     }
+    
     
     var mainViewController: UIViewController = UINavigationController(rootViewController: HomeController())
     let menuController = MenuController()
