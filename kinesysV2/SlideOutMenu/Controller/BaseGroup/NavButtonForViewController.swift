@@ -12,14 +12,22 @@ class NavButtonForViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         setupCircularNavButton()
+        setupCircularNavButton()
+        setupChatButtons()
     }
     
     @objc func handleOpen() {
         (UIApplication.shared.keyWindow?.rootViewController as? BaseSlidingController)?.openMenu()
     }
     
-    @objc func handleHide() {
+    @objc fileprivate func handleChat() {
+//        let chat = UIViewController()
+//        navigationController?.isNavigationBarHidden = true
+//        chat.view.backgroundColor = .orange
+//        navigationController?.pushViewController(chat, animated: true)
+    }
+    
+    @objc fileprivate func handleSocial() {
         
     }
     
@@ -40,7 +48,29 @@ class NavButtonForViewController: UIViewController {
         
     }
     
-    func setupCircularChatButton () {
+    func setupChatButtons () {
+        
+        let iconSize: CGFloat = 25
+        
+        let chatImage = #imageLiteral(resourceName: "lists").withRenderingMode(.alwaysTemplate)
+        let chatCustomView = UIButton(type: .system)
+        chatCustomView.addTarget(self, action: #selector(handleChat), for: .touchUpInside)
+        chatCustomView.setImage(chatImage, for: .normal)
+        chatCustomView.tintColor = .orange
+        chatCustomView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        chatCustomView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+        let chatButtonItem = UIBarButtonItem(customView: chatCustomView)
+        
+        let image = #imageLiteral(resourceName: "profile").withRenderingMode(.alwaysTemplate)
+        let customView = UIButton(type: .system)
+        customView.addTarget(self, action: #selector(handleSocial), for: .touchUpInside)
+        customView.setImage(image, for: .normal)
+        customView.tintColor = .orange
+        customView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        customView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+        let socialButtonItem = UIBarButtonItem(customView: customView)
+        
+        navigationItem.rightBarButtonItems = [chatButtonItem, socialButtonItem]
         
     }
     

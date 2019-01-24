@@ -125,6 +125,20 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
         performAnimations()
     }
     
+    func openChat() {
+        let chatController = UIViewController()
+        let navController = UINavigationController(rootViewController: chatController)
+//        present(navController, animated: true)
+        
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        present(navController, animated: false, completion: nil)
+    }
+    
     func closeMenu() {
         mainViewLeadingConstraint.constant = 0
         mainViewTrailingConstraint.constant = 0

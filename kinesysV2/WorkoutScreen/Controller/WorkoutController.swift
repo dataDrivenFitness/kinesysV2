@@ -60,9 +60,9 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         workoutCollectionView.register(CardioCell.self, forCellWithReuseIdentifier: cardioCellId)
         workoutCollectionView.register(PostCell.self, forCellWithReuseIdentifier: postWorkoutCellId)
 
-        
-        workoutCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
-        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        //FIX ME - doesn't line up correctly in different iPhone models - pt 1 of 2 (see below)
+        workoutCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 45, right: 0)
+        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 45, right: 0)
         
         workoutCollectionView.isPagingEnabled = true
     }
@@ -131,8 +131,9 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         return cell
     }
     
+    //FIX ME - doesn't line up correctly in different iPhone models - pt 2 of 2
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height - 40)
+        return CGSize(width: view.frame.width, height: view.frame.height - 50)
     }
     
 }

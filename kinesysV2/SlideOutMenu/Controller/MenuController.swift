@@ -26,7 +26,7 @@ class MenuController: UITableViewController {
     
     let menuItems = [
         MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "home"),
-        MenuItem(icon: #imageLiteral(resourceName: "moments"), title: "workout"),
+        MenuItem(icon: #imageLiteral(resourceName: "moments"), title: "today's workout"),
         MenuItem(icon: #imageLiteral(resourceName: "lists"), title: "calendar"),
         MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "setting"),
         MenuItem(icon: #imageLiteral(resourceName: "help"), title: "help"),
