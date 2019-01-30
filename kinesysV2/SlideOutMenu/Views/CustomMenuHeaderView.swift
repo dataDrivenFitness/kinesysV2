@@ -70,9 +70,9 @@ class CustomMenuHeaderView: UIView {
             logoLabel,
             UIStackView(arrangedSubviews: [profileImageView, rightSpacerView]),
             nameLabel,
-            coinLabel,
-            SpacerView(space: 12),
-            statsLabel
+//            coinLabel,
+//            SpacerView(space: 12),
+//            statsLabel
         ]
         let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
         stackView.axis = .vertical

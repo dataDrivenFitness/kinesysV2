@@ -13,13 +13,13 @@ class MenuCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "home")?.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = UIColor.darkGray
+        iv.tintColor = UIColor.lightGray
         return iv
     }()
     
     override var isSelected: Bool { //this is how collectionView cells are selectable
         didSet {
-            imageView.tintColor = isSelected ? UIColor.orange : UIColor.darkGray
+            imageView.tintColor = isSelected ? UIColor.darkGray : UIColor.lightGray
         }
     }
     

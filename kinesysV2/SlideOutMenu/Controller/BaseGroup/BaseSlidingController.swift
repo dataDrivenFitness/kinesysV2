@@ -165,7 +165,7 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
         case 1:
             mainViewController = UINavigationController(rootViewController: WorkoutController())
         case 2:
-            mainViewController = UINavigationController(rootViewController: CalendarController())
+            mainViewController = UINavigationController(rootViewController: HistoryController())
         case 3:
             mainViewController = UINavigationController(rootViewController: SettingController())
         case 4:

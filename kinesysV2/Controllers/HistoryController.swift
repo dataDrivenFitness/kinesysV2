@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarController: NavButtonForViewController {
+class HistoryController: NavButtonForViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,6 +29,7 @@
 		67E36E0B21F8E9EA00FE2D31 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0A21F8E9EA00FE2D31 /* HomeCell.swift */; };
 		67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */; };
 		67E36E1021F8EB6300FE2D31 /* AssessmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */; };
+		67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E432201FBF000FE2D31 /* OnboardingController.swift */; };
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
 		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
 		67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF421F3BA50000E48ED /* Main.storyboard */; };
@@ -38,7 +39,7 @@
 		67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */; };
 		67F96B0E21F41549000E48ED /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0D21F41549000E48ED /* ProfileImageView.swift */; };
 		67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B0F21F4273C000E48ED /* MenuItemCell.swift */; };
-		67F96B1821F4BE53000E48ED /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1721F4BE53000E48ED /* CalendarController.swift */; };
+		67F96B1821F4BE53000E48ED /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1721F4BE53000E48ED /* HistoryController.swift */; };
 		67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1921F4BE6F000E48ED /* SettingController.swift */; };
 		67F96B1C21F4BE82000E48ED /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1B21F4BE81000E48ED /* HelpController.swift */; };
 		67F96B1E21F54252000E48ED /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96B1D21F54252000E48ED /* Extensions+UIView.swift */; };
@@ -69,6 +70,7 @@
 		67E36E0A21F8E9EA00FE2D31 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCell.swift; sourceTree = "<group>"; };
+		67E36E432201FBF000FE2D31 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F96AF221F3BA50000E48ED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		67F96B0621F3EFE1000E48ED /* BaseSlidingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlidingController.swift; sourceTree = "<group>"; };
 		67F96B0D21F41549000E48ED /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		67F96B0F21F4273C000E48ED /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
-		67F96B1721F4BE53000E48ED /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		67F96B1721F4BE53000E48ED /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		67F96B1921F4BE6F000E48ED /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		67F96B1B21F4BE81000E48ED /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
 		67F96B1D21F54252000E48ED /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
@@ -239,6 +241,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		67E36E45220200EA00FE2D31 /* OnboardingScreens */ = {
+			isa = PBXGroup;
+			children = (
+				67E36E472202010500FE2D31 /* View */,
+				67E36E46220200F700FE2D31 /* Controller */,
+			);
+			path = OnboardingScreens;
+			sourceTree = "<group>";
+		};
+		67E36E46220200F700FE2D31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67E36E432201FBF000FE2D31 /* OnboardingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67E36E472202010500FE2D31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		67F96AE421F3BA50000E48ED = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +286,7 @@
 		67F96AEF21F3BA50000E48ED /* kinesysV2 */ = {
 			isa = PBXGroup;
 			children = (
+				67E36E45220200EA00FE2D31 /* OnboardingScreens */,
 				67E36E0721F8B43C00FE2D31 /* HomeScreens */,
 				67D2DA2121F6D8DB00D61DA6 /* LoginScreens */,
 				67D2D9DB21F557C000D61DA6 /* WorkoutScreen */,
@@ -279,7 +306,7 @@
 		67F96B0221F3D578000E48ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				67F96B1721F4BE53000E48ED /* CalendarController.swift */,
+				67F96B1721F4BE53000E48ED /* HistoryController.swift */,
 				67F96B1921F4BE6F000E48ED /* SettingController.swift */,
 				67F96B1B21F4BE81000E48ED /* HelpController.swift */,
 			);
@@ -494,7 +521,7 @@
 				67F96B1E21F54252000E48ED /* Extensions+UIView.swift in Sources */,
 				67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */,
 				67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */,
-				67F96B1821F4BE53000E48ED /* CalendarController.swift in Sources */,
+				67F96B1821F4BE53000E48ED /* HistoryController.swift in Sources */,
 				67D2D9F121F557C000D61DA6 /* MenuCell.swift in Sources */,
 				67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */,
 				67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */,
@@ -504,6 +531,7 @@
 				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
 				67E36E0B21F8E9EA00FE2D31 /* HomeCell.swift in Sources */,
+				67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */,
 				67D2D9F221F557C000D61DA6 /* PostCell.swift in Sources */,
 				67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */,
 				67D2D9ED21F557C000D61DA6 /* WarmupCell.swift in Sources */,

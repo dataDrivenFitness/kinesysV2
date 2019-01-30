@@ -144,10 +144,6 @@ class LoginController: UIViewController, LoginControllerDelegate {
                 SVProgressHUD.dismiss(withDelay: 2)
                 
                 self.dismiss(animated: true, completion: nil)
-
-                
-//                UserDefaults.standard.setIsLoggedIn(value: true)
-//                self.loginDelegate?.finishedLoggingIn()
             }
         }
     }

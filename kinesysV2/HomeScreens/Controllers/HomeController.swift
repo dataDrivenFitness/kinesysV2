@@ -37,7 +37,7 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.showsHorizontalScrollIndicator = false
         
         setTitleLabel(text: titles[0])
@@ -57,9 +57,7 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
     }
     
     private func setTitleForIndex(index: Int) {
-        if let titleLable = navigationItem.titleView as? UILabel {
-            titleLable.text = titles[Int(index)]
-        }
+        navigationItem.title = titles[Int(index)]
     }
     
     fileprivate func registerCells() {

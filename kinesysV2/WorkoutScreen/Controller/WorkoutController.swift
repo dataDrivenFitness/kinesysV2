@@ -34,8 +34,10 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.navigationBar.prefersLargeTitles = true
         
         workoutCollectionView.showsHorizontalScrollIndicator = false
+        workoutCollectionView.isScrollEnabled = false
         
         setTitleLabel(text: titles[0])
                 
@@ -43,8 +45,6 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         
         setupCollectionView()
         setUpMenuBar()
-//        setupCircularNavButton()
-//        setupNavBarButtons()
     }
    
     func setupCollectionView() {
@@ -61,8 +61,8 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         workoutCollectionView.register(PostCell.self, forCellWithReuseIdentifier: postWorkoutCellId)
 
         //FIX ME - doesn't line up correctly in different iPhone models - pt 1 of 2 (see below)
-        workoutCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 45, right: 0)
-        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 45, right: 0)
+        workoutCollectionView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
+        workoutCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
         workoutCollectionView.isPagingEnabled = true
     }
@@ -93,7 +93,7 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
         lineSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
 //        view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
 //        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
-        _ = menuBar.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 60)
+        _ = menuBar.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 50)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -133,7 +133,7 @@ class WorkoutController: NavButtonForViewController, UICollectionViewDataSource,
     
     //FIX ME - doesn't line up correctly in different iPhone models - pt 2 of 2
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height - 50)
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
 }

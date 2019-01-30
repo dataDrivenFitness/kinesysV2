@@ -21,14 +21,17 @@ class NavButtonForViewController: UIViewController {
     }
     
     @objc fileprivate func handleChat() {
-//        let chat = UIViewController()
-//        navigationController?.isNavigationBarHidden = true
-//        chat.view.backgroundColor = .orange
-//        navigationController?.pushViewController(chat, animated: true)
+        let chatVC = UIViewController()
+        chatVC.view.backgroundColor = .orange
+        chatVC.title = "Direct Message"
+        navigationController?.pushViewController(chatVC, animated: true)
     }
     
     @objc fileprivate func handleSocial() {
-        
+        let socialVC = UIViewController()
+        socialVC.view.backgroundColor = .green
+        socialVC.title = "Social Media Section"
+        navigationController?.pushViewController(socialVC, animated: true)
     }
     
     func setupCircularNavButton() { // need to refactor this - duplication
@@ -56,7 +59,7 @@ class NavButtonForViewController: UIViewController {
         let chatCustomView = UIButton(type: .system)
         chatCustomView.addTarget(self, action: #selector(handleChat), for: .touchUpInside)
         chatCustomView.setImage(chatImage, for: .normal)
-        chatCustomView.tintColor = .orange
+        chatCustomView.tintColor = UIColor.darkGray
         chatCustomView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         chatCustomView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
         let chatButtonItem = UIBarButtonItem(customView: chatCustomView)
@@ -65,7 +68,7 @@ class NavButtonForViewController: UIViewController {
         let customView = UIButton(type: .system)
         customView.addTarget(self, action: #selector(handleSocial), for: .touchUpInside)
         customView.setImage(image, for: .normal)
-        customView.tintColor = .orange
+        customView.tintColor = UIColor.darkGray
         customView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         customView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
         let socialButtonItem = UIBarButtonItem(customView: customView)
@@ -77,9 +80,10 @@ class NavButtonForViewController: UIViewController {
     func setTitleLabel(text: String){
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
         titleLabel.text = text
-        titleLabel.textColor = UIColor.orange
+        titleLabel.textColor = UIColor.darkGray
         titleLabel.font = UIFont(name: "Avenir-Light", size: 24)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
+        
     }
 }

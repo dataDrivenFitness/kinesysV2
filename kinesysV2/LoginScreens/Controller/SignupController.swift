@@ -167,7 +167,10 @@ class SignupController: UIViewController, SignupControllerDelegate {
                     SVProgressHUD.show(withStatus: "let's do this!")
                     SVProgressHUD.dismiss(withDelay: 2)
                     
-                    self.dismiss(animated: true, completion: nil)
+                    let newVC = OnboardingController()
+                    self.navigationController?.pushViewController(newVC, animated: true)
+                    
+//                    self.dismiss(animated: true, completion: nil)
                 }
             }
             
