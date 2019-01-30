@@ -30,10 +30,21 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
         return pc
     }()
     
+    let startWorkoutButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("go to workout", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        button.backgroundColor = .orange
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.addTarget(self, action: #selector(handleGotoWorkout), for: .touchUpInside)
+        return button
+    }()
+    
     let cellId = "cellId"
     let progressId = "progressId"
     let assessmentId = "assessmentId"
-    let titles = ["home", "progress", "assessment"]
+    let titles = ["achievements", "progress", "assessment"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +57,24 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
         
         registerCells()
         
-        view.addSubview(pageControl)
-        _ = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 50)
+        setupPageControl()
+        
+        view.addSubview(startWorkoutButton)
+        startWorkoutButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
         
     }
+    
+    //FIXME
+    @objc fileprivate func handleGotoWorkout() {
+        print("goto workout")
+        //presentViewController does not work correctly - use something else
+    }
+    
+    fileprivate func setupPageControl() {
+        view.addSubview(pageControl)
+        _ = pageControl.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 150)
+    }
+    
     func scrollToMenuIndex (menuIndex: Int) {
         let indexPath = NSIndexPath(item: menuIndex, section: 0)
         collectionView.scrollToItem(at: indexPath as IndexPath, at: [], animated: true)
@@ -57,11 +82,13 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
     }
     
     private func setTitleForIndex(index: Int) {
-        navigationItem.title = titles[Int(index)]
+        if let titleLable = navigationItem.titleView as? UILabel {
+            titleLable.text = titles[Int(index)]
+        }
     }
     
     fileprivate func registerCells() {
-        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AchievementCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(ProgressCell.self, forCellWithReuseIdentifier: progressId)
         collectionView.register(AssessmentCell.self, forCellWithReuseIdentifier: assessmentId)
     }

@@ -67,12 +67,12 @@ class SignupController: UIViewController, SignupControllerDelegate {
     
     let signupButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Log In", for: .normal)
+        button.setTitle("Sign up", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
         //        button.backgroundColor = .orange
         button.backgroundColor = UIColor.lightGray
-        button.setTitleColor(UIColor.darkGray, for: .disabled)
+        button.setTitleColor(.white, for: .disabled)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.layer.cornerRadius = 22
         button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
@@ -96,7 +96,7 @@ class SignupController: UIViewController, SignupControllerDelegate {
         setupLayout()
         setupNotificationObservers()
         setupTapGesture()
-        setupLoginViewModelObserver()
+        setupSigninViewModelObserver()
     }
     
     func didFinishLoggingIn() {
@@ -107,26 +107,28 @@ class SignupController: UIViewController, SignupControllerDelegate {
         print("fetching current user")
     }
     
-    let loginViewModel = LoginViewModel()
-    fileprivate func setupLoginViewModelObserver() {
-        loginViewModel.isFormValidObserver = { [unowned self] (isFormValid) in
+    let signupViewModel = SignupViewModel()
+    
+    fileprivate func setupSigninViewModelObserver() {
+        signupViewModel.isFormValidObserver = { [unowned self] (isFormValid) in
             print("Form is changing, is it valid?", isFormValid)
             
             self.signupButton.isEnabled = isFormValid
+            
             if isFormValid {
                 self.signupButton.backgroundColor = .orange
-                self.signupButton.setTitleColor(.white, for: .normal)
+//                self.signupButton.setTitleColor(.white, for: .normal)
             } else {
                 self.signupButton.backgroundColor = .lightGray
-                self.signupButton.setTitleColor(.gray, for: .normal)
+//                self.signupButton.setTitleColor(.white, for: .normal)
             }
         }
     }
     
-    @objc fileprivate func handleGotoSignUp() {
-        let signupController = SignupController()
-        navigationController?.pushViewController(signupController, animated: true)
-    }
+//    @objc fileprivate func handleGotoSignUp() {
+//        let signupController = SignupController()
+//        navigationController?.pushViewController(signupController, animated: true)
+//    }
     
     @objc fileprivate func handleBack() {
         navigationController?.popViewController(animated: true)
@@ -134,9 +136,11 @@ class SignupController: UIViewController, SignupControllerDelegate {
     
     @objc fileprivate func handleTextChange(textField: UITextField) {
         if textField == emailTextField {
-            loginViewModel.email = textField.text
+            signupViewModel.email = textField.text
+        } else if textField == passwordTextField {
+            signupViewModel.password = textField.text
         } else {
-            loginViewModel.password = textField.text
+            signupViewModel.verifyPassword = textField.text
         }
     }
     

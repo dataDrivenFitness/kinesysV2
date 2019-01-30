@@ -26,10 +26,11 @@
 		67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */; };
 		67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2DA1F21F6B20900D61DA6 /* LoginController.swift */; };
 		67D2DA2421F6D8F900D61DA6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */; };
-		67E36E0B21F8E9EA00FE2D31 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0A21F8E9EA00FE2D31 /* HomeCell.swift */; };
+		67E36E0B21F8E9EA00FE2D31 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0A21F8E9EA00FE2D31 /* AchievementCell.swift */; };
 		67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */; };
 		67E36E1021F8EB6300FE2D31 /* AssessmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */; };
 		67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E432201FBF000FE2D31 /* OnboardingController.swift */; };
+		67E36E4B2202566600FE2D31 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E4A2202566600FE2D31 /* SignupViewModel.swift */; };
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
 		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
 		67F96AF621F3BA50000E48ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F96AF421F3BA50000E48ED /* Main.storyboard */; };
@@ -67,10 +68,11 @@
 		67D2D9F521F55B3D00D61DA6 /* NavButtonForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtonForViewController.swift; sourceTree = "<group>"; };
 		67D2DA1F21F6B20900D61DA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		67E36E0A21F8E9EA00FE2D31 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		67E36E0A21F8E9EA00FE2D31 /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCell.swift; sourceTree = "<group>"; };
 		67E36E432201FBF000FE2D31 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		67E36E4A2202566600FE2D31 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F96AF221F3BA50000E48ED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */,
+				67E36E4A2202566600FE2D31 /* SignupViewModel.swift */,
 				67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */,
 			);
 			path = Views;
@@ -200,7 +203,7 @@
 		67E36E0921F8E9C000FE2D31 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				67E36E0A21F8E9EA00FE2D31 /* HomeCell.swift */,
+				67E36E0A21F8E9EA00FE2D31 /* AchievementCell.swift */,
 				67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */,
 				67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */,
 			);
@@ -530,7 +533,8 @@
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
 				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
-				67E36E0B21F8E9EA00FE2D31 /* HomeCell.swift in Sources */,
+				67E36E4B2202566600FE2D31 /* SignupViewModel.swift in Sources */,
+				67E36E0B21F8E9EA00FE2D31 /* AchievementCell.swift in Sources */,
 				67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */,
 				67D2D9F221F557C000D61DA6 /* PostCell.swift in Sources */,
 				67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */,
