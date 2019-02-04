@@ -60,7 +60,7 @@ class LoginController: UIViewController, LoginControllerDelegate {
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
 //        button.backgroundColor = .orange
         button.backgroundColor = UIColor.lightGray
-        button.setTitleColor(UIColor.darkGray, for: .disabled)
+        button.setTitleColor(.white, for: .disabled)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.layer.cornerRadius = 22
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
@@ -69,8 +69,8 @@ class LoginController: UIViewController, LoginControllerDelegate {
     
     let gotoSignupButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign up", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitle("back", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
         button.addTarget(self, action: #selector(handleGotoSignUp), for: .touchUpInside)
         return button
@@ -78,6 +78,7 @@ class LoginController: UIViewController, LoginControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         
@@ -112,8 +113,7 @@ class LoginController: UIViewController, LoginControllerDelegate {
     }
     
     @objc fileprivate func handleGotoSignUp() {
-        let signupController = SignupController()
-        navigationController?.pushViewController(signupController, animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc fileprivate func handleTextChange(textField: UITextField) {

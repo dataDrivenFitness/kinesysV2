@@ -86,6 +86,10 @@ class WarmupCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate
 //        let videoLauncher = VideoLauncher()
 //        videoLauncher.showVideoPlayer()
         print("Play video launcher")
+        let videoVC = UIViewController()
+        videoVC.view.backgroundColor = .green
+        let navController = UINavigationController()
+        navController.pushViewController(videoVC, animated: true)
     }
     
 }

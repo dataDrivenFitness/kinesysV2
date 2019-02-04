@@ -81,8 +81,8 @@ class SignupController: UIViewController, SignupControllerDelegate {
     
     let gotoSignupButton: UIButton = {
         let button = UIButton()
-        button.setTitle("log in", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitle("back", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
         button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         return button
@@ -90,6 +90,7 @@ class SignupController: UIViewController, SignupControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67B193D22207E3BC00EB1175 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193D12207E3BC00EB1175 /* WelcomeScreenController.swift */; };
+		67B193D422081AB400EB1175 /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193D322081AB400EB1175 /* WelcomeScreenView.swift */; };
+		67B193D82208927700EB1175 /* FirstPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193D72208927700EB1175 /* FirstPageCell.swift */; };
+		67B193DD22089BBC00EB1175 /* SecondPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193DC22089BBC00EB1175 /* SecondPageCell.swift */; };
+		67B193DF2208A19100EB1175 /* ThirdPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193DE2208A19100EB1175 /* ThirdPageCell.swift */; };
+		67B193E12208A1FA00EB1175 /* FourthPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E02208A1FA00EB1175 /* FourthPageCell.swift */; };
 		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
 		67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */; };
 		67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4C021F7A7AA004D1528 /* SignupController.swift */; };
@@ -49,6 +55,12 @@
 
 /* Begin PBXFileReference section */
 		2C3CF422337CAD6FD61697D6 /* Pods-kinesysV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kinesysV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kinesysV2/Pods-kinesysV2.debug.xcconfig"; sourceTree = "<group>"; };
+		67B193D12207E3BC00EB1175 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
+		67B193D322081AB400EB1175 /* WelcomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenView.swift; sourceTree = "<group>"; };
+		67B193D72208927700EB1175 /* FirstPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageCell.swift; sourceTree = "<group>"; };
+		67B193DC22089BBC00EB1175 /* SecondPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageCell.swift; sourceTree = "<group>"; };
+		67B193DE2208A19100EB1175 /* ThirdPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageCell.swift; sourceTree = "<group>"; };
+		67B193E02208A1FA00EB1175 /* FourthPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageCell.swift; sourceTree = "<group>"; };
 		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67C5B4C021F7A7AA004D1528 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
@@ -179,6 +191,11 @@
 				67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */,
 				67E36E4A2202566600FE2D31 /* SignupViewModel.swift */,
 				67D2DA2321F6D8F900D61DA6 /* CustomTextField.swift */,
+				67B193D322081AB400EB1175 /* WelcomeScreenView.swift */,
+				67B193D72208927700EB1175 /* FirstPageCell.swift */,
+				67B193DC22089BBC00EB1175 /* SecondPageCell.swift */,
+				67B193DE2208A19100EB1175 /* ThirdPageCell.swift */,
+				67B193E02208A1FA00EB1175 /* FourthPageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +257,7 @@
 			children = (
 				67D2DA1F21F6B20900D61DA6 /* LoginController.swift */,
 				67C5B4C021F7A7AA004D1528 /* SignupController.swift */,
+				67B193D12207E3BC00EB1175 /* WelcomeScreenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -506,12 +524,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B193D22207E3BC00EB1175 /* WelcomeScreenController.swift in Sources */,
 				67D2DA2421F6D8F900D61DA6 /* CustomTextField.swift in Sources */,
 				67E36E1021F8EB6300FE2D31 /* AssessmentCell.swift in Sources */,
+				67B193DD22089BBC00EB1175 /* SecondPageCell.swift in Sources */,
+				67B193DF2208A19100EB1175 /* ThirdPageCell.swift in Sources */,
 				67D2D9F321F557C000D61DA6 /* CardioCell.swift in Sources */,
 				67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */,
 				67D2D9EC21F557C000D61DA6 /* MenuBar.swift in Sources */,
 				67D2D9D921F551C200D61DA6 /* CustomMenuHeaderView.swift in Sources */,
+				67B193D82208927700EB1175 /* FirstPageCell.swift in Sources */,
 				67D2D9F421F557C000D61DA6 /* ExerciseCell.swift in Sources */,
 				67F96B0E21F41549000E48ED /* ProfileImageView.swift in Sources */,
 				67D2D9EB21F557C000D61DA6 /* Video.swift in Sources */,
@@ -526,6 +548,7 @@
 				67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */,
 				67F96B1821F4BE53000E48ED /* HistoryController.swift in Sources */,
 				67D2D9F121F557C000D61DA6 /* MenuCell.swift in Sources */,
+				67B193D422081AB400EB1175 /* WelcomeScreenView.swift in Sources */,
 				67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */,
 				67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */,
 				67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */,
@@ -533,6 +556,7 @@
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
 				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
+				67B193E12208A1FA00EB1175 /* FourthPageCell.swift in Sources */,
 				67E36E4B2202566600FE2D31 /* SignupViewModel.swift in Sources */,
 				67E36E0B21F8E9EA00FE2D31 /* AchievementCell.swift in Sources */,
 				67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */,

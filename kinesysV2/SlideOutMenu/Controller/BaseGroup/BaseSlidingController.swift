@@ -13,7 +13,7 @@ class MainContainerView: UIView {}
 class LeftContainerView: UIView {}
 class DarkCoverView: UIView {}
 
-class BaseSlidingController: UIViewController, LoginControllerDelegate {
+class BaseSlidingController: UIViewController {
         
     let mainView: MainContainerView = {
         let v = MainContainerView()
@@ -55,14 +55,12 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
         print("HomeController did appear")
         // you want to kick the user out when they log out
         if Auth.auth().currentUser == nil {
-            let loginController = LoginController()
-            loginController.delegate = self
-            let navController = UINavigationController(rootViewController: loginController)
+//            let loginController = LoginController()
+//            loginController.delegate = self
+            let welcomeScreenController = WelcomeScreenController()
+            let navController = UINavigationController(rootViewController: welcomeScreenController)
             present(navController, animated: true)
         }
-    }
-    func didFinishLoggingIn() {
-        fetchCurrentUser()
     }
     
     @objc func handleTapDismiss() {
@@ -149,8 +147,9 @@ class BaseSlidingController: UIViewController, LoginControllerDelegate {
     fileprivate func performLogout() {
         
         try? Auth.auth().signOut()
-        let loginController = LoginController()
-        let navController = UINavigationController(rootViewController: loginController)
+//        let loginController = LoginController()
+        let welcomeScreenController = WelcomeScreenController()
+        let navController = UINavigationController(rootViewController: welcomeScreenController)
         present(navController, animated: true)
         mainViewController = UINavigationController(rootViewController: HomeController())
     }
