@@ -34,7 +34,7 @@ class MenuItemCell: UITableViewCell {
     let bgView: UIView = {
         let v = UIView()
         v.backgroundColor = .orange
-        v.layer.cornerRadius = 25
+//        v.layer.cornerRadius = 25
         return v
     }()
     
@@ -43,34 +43,33 @@ class MenuItemCell: UITableViewCell {
         
         selectionStyle = .default
         
+        setupStackView()
+        
+        setupBackgroundView()
+        
+    }
+    
+    fileprivate func setupStackView() {
         let stackView = UIStackView(arrangedSubviews: [SpacerView(space: 4), iconImageView, titleLabel, UIView()])
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 12
-        titleLabel.text = "profile"
-        
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
+        stackView.fillSuperview()
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = .init(top: 4, left: 12, bottom: 4, right: 12)
-        
+    }
+    
+    fileprivate func setupBackgroundView() {
         addSubview(bgView)
         bgView.fillSuperview(padding: .init(top: 0, left: 12, bottom: 0, right: 12))
         sendSubviewToBack(bgView)
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-
         bgView.isHidden = !selected
         titleLabel.textColor = selected ? UIColor.white : UIColor.black
         iconImageView.tintColor = selected ? UIColor.white : UIColor.darkGray
-        
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -13,6 +13,9 @@
 		67B193DD22089BBC00EB1175 /* SecondPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193DC22089BBC00EB1175 /* SecondPageCell.swift */; };
 		67B193DF2208A19100EB1175 /* ThirdPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193DE2208A19100EB1175 /* ThirdPageCell.swift */; };
 		67B193E12208A1FA00EB1175 /* FourthPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E02208A1FA00EB1175 /* FourthPageCell.swift */; };
+		67B193E62208E21E00EB1175 /* ProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E52208E21E00EB1175 /* ProgramController.swift */; };
+		67B193E82208E2DF00EB1175 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E72208E2DF00EB1175 /* OnboardingController.swift */; };
+		67B193EA2208E3F300EB1175 /* ClientMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E92208E3F300EB1175 /* ClientMenuController.swift */; };
 		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
 		67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */; };
 		67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4C021F7A7AA004D1528 /* SignupController.swift */; };
@@ -35,7 +38,6 @@
 		67E36E0B21F8E9EA00FE2D31 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0A21F8E9EA00FE2D31 /* AchievementCell.swift */; };
 		67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */; };
 		67E36E1021F8EB6300FE2D31 /* AssessmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */; };
-		67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E432201FBF000FE2D31 /* OnboardingController.swift */; };
 		67E36E4B2202566600FE2D31 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E36E4A2202566600FE2D31 /* SignupViewModel.swift */; };
 		67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF021F3BA50000E48ED /* AppDelegate.swift */; };
 		67F96AF321F3BA50000E48ED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F96AF221F3BA50000E48ED /* HomeController.swift */; };
@@ -61,6 +63,9 @@
 		67B193DC22089BBC00EB1175 /* SecondPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageCell.swift; sourceTree = "<group>"; };
 		67B193DE2208A19100EB1175 /* ThirdPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageCell.swift; sourceTree = "<group>"; };
 		67B193E02208A1FA00EB1175 /* FourthPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPageCell.swift; sourceTree = "<group>"; };
+		67B193E52208E21E00EB1175 /* ProgramController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramController.swift; sourceTree = "<group>"; };
+		67B193E72208E2DF00EB1175 /* OnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		67B193E92208E3F300EB1175 /* ClientMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMenuController.swift; sourceTree = "<group>"; };
 		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67C5B4C021F7A7AA004D1528 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
@@ -83,7 +88,6 @@
 		67E36E0A21F8E9EA00FE2D31 /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		67E36E0D21F8EB5000FE2D31 /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		67E36E0F21F8EB6300FE2D31 /* AssessmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCell.swift; sourceTree = "<group>"; };
-		67E36E432201FBF000FE2D31 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		67E36E4A2202566600FE2D31 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		67F96AED21F3BA50000E48ED /* kinesysV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kinesysV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F96AF021F3BA50000E48ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,31 @@
 				D1D2EFF4FE32C7494BD415DF /* Pods-kinesysV2.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		67B193E22208ABE100EB1175 /* ProgramScreen */ = {
+			isa = PBXGroup;
+			children = (
+				67B193E42208E1FA00EB1175 /* Controllers */,
+				67B193E32208ABFE00EB1175 /* Archive */,
+			);
+			path = ProgramScreen;
+			sourceTree = "<group>";
+		};
+		67B193E32208ABFE00EB1175 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				67D2D9DB21F557C000D61DA6 /* WorkoutScreen */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		67B193E42208E1FA00EB1175 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67B193E52208E21E00EB1175 /* ProgramController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		67D2D9DA21F5574200D61DA6 /* SlideOutMenu */ = {
@@ -240,6 +269,7 @@
 			children = (
 				67F96B0521F3EFB9000E48ED /* BaseGroup */,
 				67F96B0321F3D5A0000E48ED /* MenuController.swift */,
+				67B193E92208E3F300EB1175 /* ClientMenuController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,35 +285,12 @@
 		67E36E1321F96BDE00FE2D31 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67B193E72208E2DF00EB1175 /* OnboardingController.swift */,
 				67D2DA1F21F6B20900D61DA6 /* LoginController.swift */,
 				67C5B4C021F7A7AA004D1528 /* SignupController.swift */,
 				67B193D12207E3BC00EB1175 /* WelcomeScreenController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		67E36E45220200EA00FE2D31 /* OnboardingScreens */ = {
-			isa = PBXGroup;
-			children = (
-				67E36E472202010500FE2D31 /* View */,
-				67E36E46220200F700FE2D31 /* Controller */,
-			);
-			path = OnboardingScreens;
-			sourceTree = "<group>";
-		};
-		67E36E46220200F700FE2D31 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				67E36E432201FBF000FE2D31 /* OnboardingController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		67E36E472202010500FE2D31 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		67F96AE421F3BA50000E48ED = {
@@ -307,10 +314,9 @@
 		67F96AEF21F3BA50000E48ED /* kinesysV2 */ = {
 			isa = PBXGroup;
 			children = (
-				67E36E45220200EA00FE2D31 /* OnboardingScreens */,
+				67B193E22208ABE100EB1175 /* ProgramScreen */,
 				67E36E0721F8B43C00FE2D31 /* HomeScreens */,
 				67D2DA2121F6D8DB00D61DA6 /* LoginScreens */,
-				67D2D9DB21F557C000D61DA6 /* WorkoutScreen */,
 				67D2D9DA21F5574200D61DA6 /* SlideOutMenu */,
 				67F96B0221F3D578000E48ED /* Controllers */,
 				67F96B1F21F54274000E48ED /* Helpers */,
@@ -547,19 +553,21 @@
 				67F96AF121F3BA50000E48ED /* AppDelegate.swift in Sources */,
 				67E36E0E21F8EB5000FE2D31 /* ProgressCell.swift in Sources */,
 				67F96B1821F4BE53000E48ED /* HistoryController.swift in Sources */,
+				67B193EA2208E3F300EB1175 /* ClientMenuController.swift in Sources */,
 				67D2D9F121F557C000D61DA6 /* MenuCell.swift in Sources */,
 				67B193D422081AB400EB1175 /* WelcomeScreenView.swift in Sources */,
 				67D2D9F621F55B3D00D61DA6 /* NavButtonForViewController.swift in Sources */,
 				67D2D9D821F551C200D61DA6 /* SpacerView.swift in Sources */,
 				67F96B1A21F4BE6F000E48ED /* SettingController.swift in Sources */,
+				67B193E82208E2DF00EB1175 /* OnboardingController.swift in Sources */,
 				67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */,
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
+				67B193E62208E21E00EB1175 /* ProgramController.swift in Sources */,
 				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
 				67F96B1021F4273C000E48ED /* MenuItemCell.swift in Sources */,
 				67B193E12208A1FA00EB1175 /* FourthPageCell.swift in Sources */,
 				67E36E4B2202566600FE2D31 /* SignupViewModel.swift in Sources */,
 				67E36E0B21F8E9EA00FE2D31 /* AchievementCell.swift in Sources */,
-				67E36E442201FBF000FE2D31 /* OnboardingController.swift in Sources */,
 				67D2D9F221F557C000D61DA6 /* PostCell.swift in Sources */,
 				67F96B0721F3EFE1000E48ED /* BaseSlidingController.swift in Sources */,
 				67D2D9ED21F557C000D61DA6 /* WarmupCell.swift in Sources */,
@@ -716,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fitness.datadriven.kinesysV2;
+				PRODUCT_BUNDLE_IDENTIFIER = fitness.datadriven.kinesys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -735,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fitness.datadriven.kinesysV2;
+				PRODUCT_BUNDLE_IDENTIFIER = fitness.datadriven.kinesys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

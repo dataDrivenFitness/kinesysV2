@@ -20,7 +20,7 @@ class SecondPageCell: UICollectionViewCell {
     
     let textView: UILabel = {
         let tv = UILabel()
-        tv.text = "Unapologetically Better"
+        tv.text = "Unapologetically Superior"
         tv.font = UIFont(name: "Avenir-Medium", size: 25)
         tv.textColor = .white
         return tv
@@ -44,7 +44,7 @@ class SecondPageCell: UICollectionViewCell {
     fileprivate func setupViews() {
         //        backgroundColor = . blue
         addSubview(imageView)
-        imageView.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 150, left: 50, bottom: 0, right: 50), size: .init(width: 300, height: 200))
+        imageView.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 150, left: 0, bottom: 0, right: 0), size: .init(width: 300, height: 200))
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         addSubview(textView)

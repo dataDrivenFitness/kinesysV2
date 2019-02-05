@@ -36,7 +36,7 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
         button.backgroundColor = .orange
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.addTarget(self, action: #selector(handleGotoWorkout), for: .touchUpInside)
         return button
     }()
@@ -60,14 +60,16 @@ class HomeController: NavButtonForViewController, UICollectionViewDataSource, UI
         setupPageControl()
         
         view.addSubview(startWorkoutButton)
-        startWorkoutButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
+        startWorkoutButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         
     }
     
-    //FIXME
+    //FIXME - can't use
     @objc fileprivate func handleGotoWorkout() {
         print("goto workout")
-        //presentViewController does not work correctly - use something else
+//        let workoutController = WorkoutController()
+//        let navController = UINavigationController(rootViewController: workoutController)
+//        present(navController, animated: true)
     }
     
     fileprivate func setupPageControl() {

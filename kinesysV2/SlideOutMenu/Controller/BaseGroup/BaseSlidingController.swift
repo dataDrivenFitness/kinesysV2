@@ -52,11 +52,7 @@ class BaseSlidingController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("HomeController did appear")
-        // you want to kick the user out when they log out
         if Auth.auth().currentUser == nil {
-//            let loginController = LoginController()
-//            loginController.delegate = self
             let welcomeScreenController = WelcomeScreenController()
             let navController = UINavigationController(rootViewController: welcomeScreenController)
             present(navController, animated: true)
@@ -166,7 +162,10 @@ class BaseSlidingController: UIViewController {
         case 2:
             mainViewController = UINavigationController(rootViewController: HistoryController())
         case 3:
-            mainViewController = UINavigationController(rootViewController: SettingController())
+            mainViewController = UINavigationController(rootViewController: HomeController())
+            let settingController = SettingController()
+            let navController = UINavigationController(rootViewController: settingController)
+            present(navController, animated: true)
         case 4:
             mainViewController = UINavigationController(rootViewController: HelpController())
         default:

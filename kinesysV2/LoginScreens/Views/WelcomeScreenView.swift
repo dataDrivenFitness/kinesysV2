@@ -16,7 +16,6 @@ class WelcomeScreenView: UIView, UICollectionViewDataSource, UICollectionViewDel
         cv.backgroundColor = .clear
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        
         cv.isPagingEnabled = true
         cv.dataSource = self
         cv.delegate = self

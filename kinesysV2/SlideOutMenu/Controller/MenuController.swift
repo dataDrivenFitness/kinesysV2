@@ -25,17 +25,20 @@ extension MenuController {
 class MenuController: UITableViewController {
     
     let menuItems = [
-        MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "home"),
-        MenuItem(icon: #imageLiteral(resourceName: "moments"), title: "today's workout"),
-        MenuItem(icon: #imageLiteral(resourceName: "lists"), title: "history"),
-        MenuItem(icon: #imageLiteral(resourceName: "bookmarks"), title: "setting"),
-        MenuItem(icon: #imageLiteral(resourceName: "help"), title: "help"),
-        MenuItem(icon: #imageLiteral(resourceName: "cancel"), title: "logout")
+        MenuItem(icon: #imageLiteral(resourceName: "bookmarks").withRenderingMode(.alwaysTemplate), title: "home"),
+        MenuItem(icon: #imageLiteral(resourceName: "moments").withRenderingMode(.alwaysTemplate), title: "today's workout"),
+        MenuItem(icon: #imageLiteral(resourceName: "lists").withRenderingMode(.alwaysTemplate), title: "history"),
+        MenuItem(icon: #imageLiteral(resourceName: "bookmarks").withRenderingMode(.alwaysTemplate), title: "setting"),
+        MenuItem(icon: #imageLiteral(resourceName: "help").withRenderingMode(.alwaysTemplate), title: "help"),
+        MenuItem(icon: #imageLiteral(resourceName: "cancel").withRenderingMode(.alwaysTemplate), title: "logout")
     ]
+    
+    let socialStackView = UIStackView(arrangedSubviews: [
+        
+        ])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.separatorStyle = .none
     }
     
@@ -58,7 +61,7 @@ class MenuController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 220
+        return 200
     }
 
 }

@@ -30,7 +30,7 @@ class FirstPageCell: UICollectionViewCell {
         let tv = UILabel()
         tv.numberOfLines = 2
         tv.textAlignment = .center
-        tv.text = "The most advanced fitness\napp on the planet"
+        tv.text = "with the most advanced\nfitness app on the planet"
         tv.font = UIFont(name: "Avenir-Light", size: 18)
         tv.textColor = .white
         return tv
