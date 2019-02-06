@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import SDWebImage
 
 //class CustomImagePickerController: UIImagePickerController {
 //    var imageButton : UIButton?
@@ -35,6 +36,8 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView.separatorStyle = .none
         tableView.keyboardDismissMode = .interactive
+        
+        fetchCurrentUser()
     }
     
     @objc fileprivate func handleCancel() {
@@ -51,6 +54,29 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
+    }
+    
+    var user: User?
+    
+    fileprivate func fetchCurrentUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let dictionary = snapshot?.data() else { return }
+            self.user = User(dictionary: dictionary)
+            self.loadUserPhoto()
+            self.tableView.reloadData()
+        }
+    }
+    
+    fileprivate func loadUserPhoto() {
+        guard let imageUrl = user?.profileImage, let url = URL(string: imageUrl) else { return }
+        SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { (image, _, _, _, _, _) in
+            self.profilePictureButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -89,10 +115,8 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         case 2:
             headerLabel.text = "Trainer"
         case 3:
-            headerLabel.text = "Email"
-        case 4:
             headerLabel.text = "Birthdate"
-        case 5:
+        case 4:
             headerLabel.text = "Height"
         default:
             headerLabel.text = "Bio"
@@ -124,16 +148,16 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
             switch indexPath.row {
             case 0:
                 cell.textField.placeholder = "First Name"
+                cell.textField.text = user?.firstName
             default:
                 cell.textField.placeholder = "Last Name"
+                cell.textField.text = user?.lastName
             }
         case 2:
             cell.textField.placeholder = "Your trainer's name"
         case 3:
-            cell.textField.placeholder = "Enter email"
-        case 4:
              cell.textField.placeholder = "Enter birthdate"
-        case 5:
+        case 4:
             cell.textField.placeholder = "Enter height"
         default:
             cell.textField.placeholder = "Enter Bio"
@@ -143,7 +167,7 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 6
     }
     
     fileprivate func setupNavigationItems() {

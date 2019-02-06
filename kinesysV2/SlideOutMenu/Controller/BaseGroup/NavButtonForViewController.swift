@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import Firebase
 
 class NavButtonForViewController: UIViewController {
 
@@ -34,7 +36,10 @@ class NavButtonForViewController: UIViewController {
         navigationController?.pushViewController(socialVC, animated: true)
     }
     
+    var user: User?
+    
     func setupCircularNavButton() { // need to refactor this - duplication
+        
         let image = #imageLiteral(resourceName: "alexOC_profile").withRenderingMode(.alwaysOriginal)
         let customView = UIButton(type: .system)
         let iconSize: CGFloat = 30
@@ -46,6 +51,23 @@ class NavButtonForViewController: UIViewController {
         customView.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         customView.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
         let barButtonItem = UIBarButtonItem(customView: customView)
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let dictionary = snapshot?.data() else { return }
+            self.user = User(dictionary: dictionary)
+            
+            guard let imageUrl = self.user?.profileImage, let url = URL(string: imageUrl) else { return }
+            SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { (image, _, _, _, _, _) in
+                customView.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
+            
+            self.view.reloadInputViews()
+        }
         
         navigationItem.leftBarButtonItem = barButtonItem
         
@@ -85,5 +107,18 @@ class NavButtonForViewController: UIViewController {
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = false
         
+    }
+    
+    fileprivate func fetchCurrentUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let dictionary = snapshot?.data() else { return }
+            self.user = User(dictionary: dictionary)
+            self.view.reloadInputViews()
+        }
     }
 }

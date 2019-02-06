@@ -167,26 +167,15 @@ class SignupController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     @objc fileprivate func handleSignup() {
         self.handleTapDismiss()
-        
         signupViewModel.performSignUp { [weak self] (error) in
             if let error = error {
-                self?.showHUDWithErrors(withStatus: error)
+                self?.showHUDWithError(error: error)
                 return
-            }
-        }
-        
-        let newVC = OnboardingController()
-        self.navigationController?.pushViewController(newVC, animated: true)
-    }
-    
-    fileprivate func saveInfoToFirestore(imageUrl: String) {
-        let uid = Auth.auth().currentUser?.uid ?? ""
-        let docData = ["uid" : uid]
-        Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
-            if let error = error {
-                print("\(error)")
-                return
-            }
+            } //FIXME - For some reason it repeats the following twice
+            print("***Finished signing up user")
+            self?.showSuccessHUD(withStatus: "welcome to the jungle")
+            let newVC = OnboardingController()
+            self?.navigationController?.pushViewController(newVC, animated: true)
         }
     }
     
@@ -200,14 +189,15 @@ class SignupController: UIViewController, UIImagePickerControllerDelegate, UINav
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.setHapticsEnabled(true)
         SVProgressHUD.show(withStatus: withStatus)
+        SVProgressHUD.dismiss(withDelay: 2)
     }
     
-    fileprivate func showHUDWithErrors(withStatus: Error) {
+    fileprivate func showHUDWithError(error: Error) {
 //        SVProgressHUD.dismiss()
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.setHapticsEnabled(true)
-        SVProgressHUD.showError(withStatus: withStatus as? String)
-        SVProgressHUD.dismiss(withDelay: 2)
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
+        SVProgressHUD.dismiss(withDelay: 3)
     }
     
     @objc func handleTapDismiss() {

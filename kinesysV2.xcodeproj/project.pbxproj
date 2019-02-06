@@ -18,6 +18,7 @@
 		67B193EA2208E3F300EB1175 /* ClientMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193E92208E3F300EB1175 /* ClientMenuController.swift */; };
 		67B193EF220A1F2000EB1175 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193EE220A1F2000EB1175 /* SettingsCell.swift */; };
 		67B193F1220A41D200EB1175 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193F0220A41D200EB1175 /* Bindable.swift */; };
+		67B193FA220B4ED000EB1175 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B193F9220B4ED000EB1175 /* User.swift */; };
 		67C5B4B721F6F81E004D1528 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */; };
 		67C5B4B921F77E16004D1528 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */; };
 		67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5B4C021F7A7AA004D1528 /* SignupController.swift */; };
@@ -70,6 +71,7 @@
 		67B193E92208E3F300EB1175 /* ClientMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMenuController.swift; sourceTree = "<group>"; };
 		67B193EE220A1F2000EB1175 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		67B193F0220A41D200EB1175 /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		67B193F9220B4ED000EB1175 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		67C5B4B621F6F81E004D1528 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		67C5B4B821F77E15004D1528 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67C5B4C021F7A7AA004D1528 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,14 @@
 				67B193EE220A1F2000EB1175 /* SettingsCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		67B193F6220B4D2200EB1175 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				67B193F9220B4ED000EB1175 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		67D2D9DA21F5574200D61DA6 /* SlideOutMenu */ = {
@@ -343,6 +353,7 @@
 		67F96AEF21F3BA50000E48ED /* kinesysV2 */ = {
 			isa = PBXGroup;
 			children = (
+				67B193F6220B4D2200EB1175 /* User */,
 				67B193EB220A1ED000EB1175 /* SettingsScreen */,
 				67B193E22208ABE100EB1175 /* ProgramScreen */,
 				67E36E0721F8B43C00FE2D31 /* HomeScreens */,
@@ -594,6 +605,7 @@
 				67F96B1A21F4BE6F000E48ED /* SettingsController.swift in Sources */,
 				67B193E82208E2DF00EB1175 /* OnboardingController.swift in Sources */,
 				67D2DA2021F6B20900D61DA6 /* LoginController.swift in Sources */,
+				67B193FA220B4ED000EB1175 /* User.swift in Sources */,
 				67D2D9EA21F557C000D61DA6 /* WorkoutController.swift in Sources */,
 				67B193E62208E21E00EB1175 /* ProgramController.swift in Sources */,
 				67C5B4C121F7A7AA004D1528 /* SignupController.swift in Sources */,
