@@ -163,8 +163,8 @@ class BaseSlidingController: UIViewController {
             mainViewController = UINavigationController(rootViewController: HistoryController())
         case 3:
             mainViewController = UINavigationController(rootViewController: HomeController())
-            let settingController = SettingController()
-            let navController = UINavigationController(rootViewController: settingController)
+            let settingsController = SettingsController()
+            let navController = UINavigationController(rootViewController: settingsController)
             present(navController, animated: true)
         case 4:
             mainViewController = UINavigationController(rootViewController: HelpController())

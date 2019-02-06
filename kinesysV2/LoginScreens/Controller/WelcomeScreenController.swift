@@ -14,7 +14,7 @@ class WelcomeScreenController: UIViewController {
     
     let buttonHeight: CGFloat = 60
     
-    func createButton(selector: Selector, text: String) -> UIButton {
+    fileprivate func createButton(selector: Selector, text: String) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(text, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 18)

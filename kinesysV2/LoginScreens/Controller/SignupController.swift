@@ -14,7 +14,7 @@ protocol SignupControllerDelegate {
     func didFinishLoggingIn()
 }
 
-class SignupController: UIViewController, SignupControllerDelegate {
+class SignupController: UIViewController, SignupControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var delegate: SignupControllerDelegate?
     
@@ -28,49 +28,49 @@ class SignupController: UIViewController, SignupControllerDelegate {
         return text
     }()
     
-    let emailTextField: CustomTextField = {
+    let selectPhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("select photo", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.orange.cgColor
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+        button.backgroundColor = .white
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        button.layer.cornerRadius = 100
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        return button
+    }()
+    
+    fileprivate func createTextField(placeholder: String) -> CustomTextField {
         let tf = CustomTextField(padding: 24, height: 44)
-        tf.placeholder = "enter email"
+        tf.placeholder = placeholder
         tf.keyboardType = .emailAddress
         tf.backgroundColor = .white
-        //        tf.textColor = UIColor.orange
         tf.layer.borderColor = UIColor.orange.cgColor
         tf.layer.borderWidth = 1
         tf.font = UIFont(name: "Avenir-Light", size: 20)
         tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         return tf
-    }()
-    let passwordTextField: CustomTextField = {
-        let tf = CustomTextField(padding: 24, height: 44)
-        tf.placeholder = "enter password"
-        tf.isSecureTextEntry = true
-        tf.backgroundColor = .white
-        //        tf.textColor = UIColor.orange
-        tf.layer.borderColor = UIColor.orange.cgColor
-        tf.layer.borderWidth = 1
-        tf.font = UIFont(name: "Avenir-Light", size: 20)
-        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
-        return tf
-    }()
-    let confirmPasswordTextField: CustomTextField = {
-        let tf = CustomTextField(padding: 24, height: 44)
-        tf.placeholder = "re-enter password"
-        tf.isSecureTextEntry = true
-        tf.backgroundColor = .white
-        //        tf.textColor = UIColor.orange
-        tf.layer.borderColor = UIColor.orange.cgColor
-        tf.layer.borderWidth = 1
-        tf.font = UIFont(name: "Avenir-Light", size: 20)
-        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
-        return tf
-    }()
+    }
+    
+    lazy var emailTextField = createTextField(placeholder: "enter email")
+    lazy var passwordTextField = createTextField(placeholder: "enter password")
+    lazy var confirmPasswordTextField = createTextField(placeholder: "re-enter password")
+    
+    fileprivate func setupKeyboardTypes() {
+        emailTextField.keyboardType = .emailAddress
+        passwordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.isSecureTextEntry = true
+    }
     
     let signupButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign up", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
-        //        button.backgroundColor = .orange
         button.backgroundColor = UIColor.lightGray
         button.setTitleColor(.white, for: .disabled)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
@@ -98,6 +98,7 @@ class SignupController: UIViewController, SignupControllerDelegate {
         setupNotificationObservers()
         setupTapGesture()
         setupSigninViewModelObserver()
+        setupKeyboardTypes()
     }
     
     func didFinishLoggingIn() {
@@ -105,31 +106,45 @@ class SignupController: UIViewController, SignupControllerDelegate {
     }
     
     fileprivate func fetchCurrentUser() {
-        print("fetching current user")
+        print("***fetching current user")
     }
     
     let signupViewModel = SignupViewModel()
     
     fileprivate func setupSigninViewModelObserver() {
-        signupViewModel.isFormValidObserver = { [unowned self] (isFormValid) in
-            print("Form is changing, is it valid?", isFormValid)
-            
+        signupViewModel.bindableIsFormValid.bind { [unowned self] (isFormValid) in
+            guard let isFormValid = isFormValid else { return }
             self.signupButton.isEnabled = isFormValid
-            
-            if isFormValid {
-                self.signupButton.backgroundColor = .orange
-//                self.signupButton.setTitleColor(.white, for: .normal)
+            self.signupButton.backgroundColor = isFormValid ? .orange : .lightGray
+        }
+        
+        signupViewModel.bindableImage.bind { [unowned self] (img) in
+            self.selectPhotoButton.setImage(img?.withRenderingMode(.alwaysOriginal), for: .normal)
+            self.selectPhotoButton.imageView?.contentMode = .scaleAspectFill
+        }
+        
+        signupViewModel.bindableIsRegistering.bind { [unowned self] (isRegistering) in
+            if isRegistering == true {
+                self.showHUD()
             } else {
-                self.signupButton.backgroundColor = .lightGray
-//                self.signupButton.setTitleColor(.white, for: .normal)
+                SVProgressHUD.dismiss()
             }
         }
     }
     
-//    @objc fileprivate func handleGotoSignUp() {
-//        let signupController = SignupController()
-//        navigationController?.pushViewController(signupController, animated: true)
-//    }
+    @objc fileprivate func handleSelectPhoto() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.editedImage] as? UIImage {
+            signupViewModel.bindableImage.value = selectedImage
+        }
+        dismiss(animated: true)
+    }
     
     @objc fileprivate func handleBack() {
         navigationController?.popViewController(animated: true)
@@ -141,7 +156,7 @@ class SignupController: UIViewController, SignupControllerDelegate {
         } else if textField == passwordTextField {
             signupViewModel.password = textField.text
         } else {
-            signupViewModel.verifyPassword = textField.text
+            signupViewModel.confirmPassword = textField.text
         }
     }
     
@@ -151,35 +166,65 @@ class SignupController: UIViewController, SignupControllerDelegate {
         guard let password = passwordTextField.text else { return }
         guard let confirmPassword = confirmPasswordTextField.text else { return }
         
+        signupViewModel.bindableIsRegistering.value = true
+        
         if password != confirmPassword {
-            SVProgressHUD.setDefaultMaskType(.gradient)
-            SVProgressHUD.setHapticsEnabled(true)
-            SVProgressHUD.showError(withStatus: "password does not match")
-            SVProgressHUD.dismiss(withDelay: 1.5)
+            showHUDWithErrors(withStatus: "passwords do not match")
             
         } else {
             
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+
                 if error != nil {
-                    SVProgressHUD.setDefaultMaskType(.gradient)
-                    SVProgressHUD.setHapticsEnabled(true)
-                    SVProgressHUD.showError(withStatus: "not a valid email")
-                    SVProgressHUD.dismiss(withDelay: 1.5)
+                    
+                    self.showHUDWithErrors(withStatus: "not a valid email")
                     print(error!)
                 } else {
-                    SVProgressHUD.setDefaultMaskType(.gradient)
-                    SVProgressHUD.setHapticsEnabled(true)
-                    SVProgressHUD.show(withStatus: "let's do this!")
-                    SVProgressHUD.dismiss(withDelay: 2)
-                    
-                    let newVC = OnboardingController()
-                    self.navigationController?.pushViewController(newVC, animated: true)
-                    
-//                    self.dismiss(animated: true, completion: nil)
+                    self.showSuccessHUD(withStatus: "welcome to the jungle")
+                    let filename = UUID().uuidString
+                    let ref = Storage.storage().reference(withPath: "/profileImage/\(filename)")
+                    let imageData = self.signupViewModel.bindableImage.value?.jpegData(compressionQuality: 0.75) ?? Data()
+                    ref.putData(imageData, metadata: nil, completion: { (_, error) in
+                        if let error = error {
+                            self.showHUDWithErrors(withStatus: "\(error)")
+                            return
+                        }
+                        print("***finished uploading image to storage")
+                        ref.downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                self.showHUDWithErrors(withStatus: "\(error)")
+                            }
+                            print("***Download url is: ", url?.absoluteString ?? "")
+                        })
+                        
+                        
+                        let newVC = OnboardingController()
+                        self.navigationController?.pushViewController(newVC, animated: true)
+                        self.signupViewModel.bindableIsRegistering.value = false
+                    })
                 }
             }
-            
         }
+    }
+    
+    fileprivate func showHUD() {
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.setHapticsEnabled(true)
+    }
+    
+    fileprivate func showSuccessHUD(withStatus: String) {
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.setHapticsEnabled(true)
+        SVProgressHUD.show(withStatus: withStatus)
+    }
+    
+    fileprivate func showHUDWithErrors(withStatus: String) {
+//        SVProgressHUD.dismiss()
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.setHapticsEnabled(true)
+        SVProgressHUD.showError(withStatus: withStatus)
+        SVProgressHUD.dismiss(withDelay: 2)
     }
     
     @objc func handleTapDismiss() {
@@ -204,7 +249,7 @@ class SignupController: UIViewController, SignupControllerDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.removeObserver(self)
     }
     
     @objc fileprivate func handleKeyboardShow(notification: Notification) {
@@ -220,8 +265,15 @@ class SignupController: UIViewController, SignupControllerDelegate {
         self.view.transform = CGAffineTransform(translationX: 0, y: -difference - 8)
     }
     
+    lazy var photoButtonStackView: UIStackView = {
+        let sv = UIStackView(arrangedSubviews: [UIView(), selectPhotoButton, UIView()])
+        sv.distribution = .equalCentering
+        return sv
+    }()
+    
     lazy var stackView = UIStackView(arrangedSubviews: [
         logoText,
+        photoButtonStackView,
         emailTextField,
         passwordTextField,
         confirmPasswordTextField,

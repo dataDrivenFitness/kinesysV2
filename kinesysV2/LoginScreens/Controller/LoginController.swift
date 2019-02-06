@@ -131,21 +131,27 @@ class LoginController: UIViewController, LoginControllerDelegate {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
-                SVProgressHUD.setDefaultMaskType(.gradient)
-                SVProgressHUD.setHapticsEnabled(true)
-                SVProgressHUD.showError(withStatus: "email or password incorrect")
-                SVProgressHUD.dismiss(withDelay: 1.5)
-                print(error!)
+                self.showHUDWithErrors(withStatus: "email or password incorrect")
             } else {
-                self.didFinishLoggingIn()
-                SVProgressHUD.setDefaultMaskType(.gradient)
-                SVProgressHUD.setHapticsEnabled(true)
-                SVProgressHUD.show(withStatus: "let's do this!")
-                SVProgressHUD.dismiss(withDelay: 2)
+                self.showHUD(withStatus: "welcome back!")
                 
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    fileprivate func showHUD(withStatus: String) {
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.setHapticsEnabled(true)
+        SVProgressHUD.show(withStatus: withStatus)
+        SVProgressHUD.dismiss(withDelay: 2)
+    }
+    
+    fileprivate func showHUDWithErrors(withStatus: String) {
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.setHapticsEnabled(true)
+        SVProgressHUD.showError(withStatus: withStatus)
+        SVProgressHUD.dismiss(withDelay: 1.5)
     }
     
     @objc func handleTapDismiss() {
