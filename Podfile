@@ -14,5 +14,6 @@ pod 'Firebase/Core'
 pod 'GoogleAppMeasurement'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
+pod 'PasswordTextField'
 
 end

@@ -9,14 +9,9 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import PasswordTextField
 
-protocol SignupControllerDelegate {
-    func didFinishLoggingIn()
-}
-
-class SignupController: UIViewController, SignupControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    var delegate: SignupControllerDelegate?
+class SignupController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let logoText: UILabel = {
         let text = UILabel()
@@ -44,10 +39,10 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
         return button
     }()
     
-    fileprivate func createTextField(placeholder: String) -> CustomTextField {
+    fileprivate func createTextField(placeholder: String, keyboardType: UIKeyboardType) -> CustomTextField {
         let tf = CustomTextField(padding: 24, height: 44)
         tf.placeholder = placeholder
-        tf.keyboardType = .emailAddress
+        tf.keyboardType = keyboardType
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.orange.cgColor
         tf.layer.borderWidth = 1
@@ -56,15 +51,23 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
         return tf
     }
     
-    lazy var emailTextField = createTextField(placeholder: "enter email")
-    lazy var passwordTextField = createTextField(placeholder: "enter password")
-    lazy var confirmPasswordTextField = createTextField(placeholder: "re-enter password")
+    lazy var firstNameTextField = createTextField(placeholder: "enter first name", keyboardType: .default)
+    lazy var lastNameTextField = createTextField(placeholder: "enter last name", keyboardType: .default)
+    lazy var emailTextField = createTextField(placeholder: "enter email", keyboardType: .emailAddress)
+//    lazy var confirmPasswordTextField = createTextField(placeholder: "re-enter password")
     
-    fileprivate func setupKeyboardTypes() {
-        emailTextField.keyboardType = .emailAddress
-        passwordTextField.isSecureTextEntry = true
-        confirmPasswordTextField.isSecureTextEntry = true
-    }
+    let passwordTextField: PasswordTextField = {
+        let pt = PasswordTextField()
+        pt.placeholder = "enter password"
+        pt.backgroundColor = .white
+        pt.font = UIFont(name: "Avenir-Light", size: 20)
+        pt.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        pt.layer.borderColor = UIColor.orange.cgColor
+        pt.layer.borderWidth = 1
+        pt.layer.cornerRadius = 22
+        pt.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        return pt
+    }()
     
     let signupButton: UIButton = {
         let button = UIButton(type: .system)
@@ -98,7 +101,6 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
         setupNotificationObservers()
         setupTapGesture()
         setupSigninViewModelObserver()
-        setupKeyboardTypes()
     }
     
     func didFinishLoggingIn() {
@@ -151,58 +153,39 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
     }
     
     @objc fileprivate func handleTextChange(textField: UITextField) {
-        if textField == emailTextField {
+        
+        if textField == firstNameTextField {
+            signupViewModel.firstName = textField.text
+        } else if textField == lastNameTextField {
+            signupViewModel.lastName = textField.text
+        } else if textField == emailTextField {
             signupViewModel.email = textField.text
-        } else if textField == passwordTextField {
-            signupViewModel.password = textField.text
         } else {
-            signupViewModel.confirmPassword = textField.text
+            signupViewModel.password = textField.text
         }
     }
     
     @objc fileprivate func handleSignup() {
         self.handleTapDismiss()
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        guard let confirmPassword = confirmPasswordTextField.text else { return }
         
-        signupViewModel.bindableIsRegistering.value = true
+        signupViewModel.performSignUp { [weak self] (error) in
+            if let error = error {
+                self?.showHUDWithErrors(withStatus: error)
+                return
+            }
+        }
         
-        if password != confirmPassword {
-            showHUDWithErrors(withStatus: "passwords do not match")
-            
-        } else {
-            
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-
-                if error != nil {
-                    
-                    self.showHUDWithErrors(withStatus: "not a valid email")
-                    print(error!)
-                } else {
-                    self.showSuccessHUD(withStatus: "welcome to the jungle")
-                    let filename = UUID().uuidString
-                    let ref = Storage.storage().reference(withPath: "/profileImage/\(filename)")
-                    let imageData = self.signupViewModel.bindableImage.value?.jpegData(compressionQuality: 0.75) ?? Data()
-                    ref.putData(imageData, metadata: nil, completion: { (_, error) in
-                        if let error = error {
-                            self.showHUDWithErrors(withStatus: "\(error)")
-                            return
-                        }
-                        print("***finished uploading image to storage")
-                        ref.downloadURL(completion: { (url, error) in
-                            if let error = error {
-                                self.showHUDWithErrors(withStatus: "\(error)")
-                            }
-                            print("***Download url is: ", url?.absoluteString ?? "")
-                        })
-                        
-                        
-                        let newVC = OnboardingController()
-                        self.navigationController?.pushViewController(newVC, animated: true)
-                        self.signupViewModel.bindableIsRegistering.value = false
-                    })
-                }
+        let newVC = OnboardingController()
+        self.navigationController?.pushViewController(newVC, animated: true)
+    }
+    
+    fileprivate func saveInfoToFirestore(imageUrl: String) {
+        let uid = Auth.auth().currentUser?.uid ?? ""
+        let docData = ["uid" : uid]
+        Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
+            if let error = error {
+                print("\(error)")
+                return
             }
         }
     }
@@ -219,11 +202,11 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
         SVProgressHUD.show(withStatus: withStatus)
     }
     
-    fileprivate func showHUDWithErrors(withStatus: String) {
+    fileprivate func showHUDWithErrors(withStatus: Error) {
 //        SVProgressHUD.dismiss()
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.setHapticsEnabled(true)
-        SVProgressHUD.showError(withStatus: withStatus)
+        SVProgressHUD.showError(withStatus: withStatus as? String)
         SVProgressHUD.dismiss(withDelay: 2)
     }
     
@@ -274,9 +257,11 @@ class SignupController: UIViewController, SignupControllerDelegate, UIImagePicke
     lazy var stackView = UIStackView(arrangedSubviews: [
         logoText,
         photoButtonStackView,
+        firstNameTextField,
+        lastNameTextField,
         emailTextField,
         passwordTextField,
-        confirmPasswordTextField,
+//        confirmPasswordTextField,
         signupButton
         ])
     

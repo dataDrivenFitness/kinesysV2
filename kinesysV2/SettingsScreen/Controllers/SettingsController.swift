@@ -20,7 +20,6 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         let button = UIButton(type: .system)
         button.setTitle("select photo", for: .normal)
         button.backgroundColor = .white
-//        button.imageView?.contentMode = .scaleToFill
         button.layer.cornerRadius = 200 / 2
         button.clipsToBounds = true
         button.layer.borderWidth = 5

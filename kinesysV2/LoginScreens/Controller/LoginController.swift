@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SVProgressHUD
+import PasswordTextField
 
 protocol LoginControllerDelegate {
     func didFinishLoggingIn()
@@ -40,12 +41,13 @@ class LoginController: UIViewController, LoginControllerDelegate {
         tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
         return tf
     }()
-    let passwordTextField: CustomTextField = {
-        let tf = CustomTextField(padding: 24, height: 44)
+    
+    let passwordTextField: PasswordTextField = {
+        let tf = PasswordTextField()
         tf.placeholder = "enter password"
-        tf.isSecureTextEntry = true
         tf.backgroundColor = .white
-//        tf.textColor = UIColor.orange
+        tf.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        tf.layer.cornerRadius = 22
         tf.layer.borderColor = UIColor.orange.cgColor
         tf.layer.borderWidth = 1
         tf.font = UIFont(name: "Avenir-Light", size: 20)

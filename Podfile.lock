@@ -106,6 +106,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PasswordTextField (1.2.0)
   - Protobuf (3.6.1)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
@@ -118,6 +119,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - GoogleAppMeasurement
+  - PasswordTextField
   - SDWebImage
   - SVProgressHUD
 
@@ -139,6 +141,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - PasswordTextField
     - Protobuf
     - SDWebImage
     - SVProgressHUD
@@ -160,10 +163,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PasswordTextField: 2548de43f150fc90a014da47b0d97e31aada4b94
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 47e59bc2fb021d90c1523a64fc1ac8938e91828f
+PODFILE CHECKSUM: 6b5e234aa013fa0961c6c204dc586f35f99debcb
 
 COCOAPODS: 1.5.3
